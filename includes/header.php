@@ -74,9 +74,9 @@
 								<ul>
 									<li class="menu-has-children"><a href="">Pra Bencana</a>
 										<ul>
-											<li><a href="PilihanPersiapanDiri.html">Persiapan Diri</a></li>
-											<li><a href="PilihanPersiapanIndoor.html">Persiapan Didalam Rumah</a></li>
-											<li><a href="PilihanPersiapanOutdoor.html">Persiapan Diluar Rumah</a></li>
+											<li><a href="prabencana.php?kategori=1">Persiapan Diri</a></li>
+											<li><a href="prabencana.php?kategori=2">Persiapan Didalam Rumah</a></li>
+											<li><a href="prabencana.php?kategori=3">Persiapan Diluar Rumah</a></li>
 										</ul>
 									</li>
 									<li><a href="#">Survival</a>
@@ -88,14 +88,14 @@
 									</li>
 								</ul>
 							</li>
-							
+
 							<li><a href="">Cari Orang</a>
 								<ul>
 									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
 									<li><a href="PilihanOrangDitemukan.html">Orang Ditemukan</a></li>
 								</ul>
 							</li>
-							
+
 
 							<li class="menu-has-children"><a href="">Info Bencana</a>
 							<ul>

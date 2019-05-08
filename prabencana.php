@@ -8,7 +8,7 @@ if (!isset($_GET['kategori'])) {
 }
 
 $kategori = intval($_GET['kategori']);
-$sql = "SELECT judul, thumbnail
+$sql = "SELECT id, judul, thumbnail
         FROM `pra-bencana_konten`
         WHERE kategori=$kategori";
 $sql2 = "SELECT nama as kategori
@@ -44,7 +44,7 @@ include "includes/header.php";
 						<div class="col-lg-12 post-list">
 
                         <?php
-                        
+
                         if ($result = $db->query($sql)) {
                         ?>
 
@@ -52,7 +52,7 @@ include "includes/header.php";
 							<div class="latest-post-wrap">
                                 <h4 class="cat-title"><?php echo $kategori["kategori"]; ?></h4>
                                 <?php
-                                
+
                             while ($row = $result->fetch_array()) {
                                 // print_r($row);
                                 // echo "1";
@@ -65,15 +65,15 @@ include "includes/header.php";
 										</div>
 									</div>
 									<div class="col-lg-9 post-right">
-										<a href="#">
-											<h4><a href="#"><?php echo $row["judul"];?></a></h4>
+										<a href="prabencana_konten.php?konten_id=<?php echo $row['id']; ?>">
+											<h4><a href="prabencana_konten.php?konten_id=<?php echo $row['id']; ?>"><?php echo $row["judul"];?></a></h4>
 										</a>
 									</div>
                                 </div>
-                            
+
                             <?php
                             }
-                            ?>				
+                            ?>
 							</div>
                             <!-- End latest-post Area -->
                         <?php
