@@ -200,7 +200,7 @@
 					<th scope="col">JUDUL</th>
 					<th scope="col">KETERANGAN</th>
 					<th scope="col" style="text-align: center;">FOTO</th>
-					<th scope="col" style="text-align: center;">HANDEL</th>
+					<th scope="col" colspan="2" style="text-align: center;">HANDEL</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -210,6 +210,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">2</th>
@@ -217,6 +218,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -224,6 +226,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -231,6 +234,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -238,6 +242,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -245,6 +250,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -252,6 +258,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -259,6 +266,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 				<tr>
 					<th scope="row">3</th>
@@ -266,6 +274,7 @@
 					<td>dapat digunakan untuk obat sakit perut</td>
 					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
 					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
 				</tr>
 			</tbody>
 		</table>
@@ -420,6 +429,58 @@
 				<!-- Modal footer -->
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       KONFRIM</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- MODAL END -->
+	<!-- The Modal -->
+	<div class="modal fade" id="modal_update" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header" style="text-align: center;">
+					<h4 class="modal-title" >UPDATE</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row" style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
+						<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
+					</div>
+					<div class="row"style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">BENTUK</div>
+						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
+					</div>
+					<div class="row"style="margin-top: 10px; " >
+						<div class="col col-sm-4"  style=" padding-top: 5px;">WARNA</div>
+						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
+					</div>										
+					<div class="row"style="margin-top: 10px;"  style=" padding-top: 5px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">CARA MAKAN</div>
+						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
+					</div>
+					<div class="row"style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
+						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
+					</div>
+					<div class="row"style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
+						<input type="file" id="file-with-current" class="input-default-js">
+
+						<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+					</div>
+				</div>
+
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 				</div>
 
