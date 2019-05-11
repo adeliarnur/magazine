@@ -1,0 +1,9 @@
+.git init
+git status
+git log
+.git add .
+.git remote add origin https://github.com/RHEFAR/Projek-PSI.git
+.git commit -m "message terseah"
+.git push origin master
+.git pull origin master
+add
