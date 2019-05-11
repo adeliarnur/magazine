@@ -6,6 +6,7 @@ $password = "";
 // Create connection
 $conn = new mysqli($servername, $username, $password);
 
+$seleted = mysqli_select_db($conn,"psi");
 // Check connection
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
@@ -99,6 +100,7 @@ echo "Connected successfully";
 			border-color: rgb(91,192,222);
 		}
 		.label_text{
+			text-align: left;
 			margin-top: 10px;
 			font-weight: 400;
 			color: black;
@@ -219,22 +221,47 @@ echo "Connected successfully";
 				<table class="table" style="margin-top: 20px;">
 					<thead class="thead-dark">
 						<tr>
-							<th scope="col">No.</th>
-							<th scope="col">Judul</th>
-							<th scope="col">Keterangan ALAT</th>
+							<th scope="col" style="text-align: center;">No.</th>
+							<th scope="col" style="text-align: center;">Judul</th>
+							<th scope="col" style="text-align: center;">Bahan</th>
+							<th scope="col" style="text-align: center;">Alat</th>
+							<th scope="col" style="text-align: center;">Keterangan</th>
 							<th scope="col" style="text-align: center;">foto</th>
-							<!-- <th scope="col" colspan="2" style="text-align: center;">Handle</th> -->
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>KOREK</td>
-							<td>dibuat dengan >bahan< dan dengan alat >alat<</td>
-							<td style="text-align: center;"><img src="img/korek.jpg" style="width: 50px; height: 50px;"></td>
-							<!-- <td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td> -->
-							<!-- <td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td> -->
-						</tr>
+						<?php
+						$sql = 'SELECT * FROM `creatingtool`';
+						$retval = mysqli_query( $conn, $sql );
+						$id =1;
+
+						if(! $retval ) {
+							die('Could not get data: ' . mysql_error());
+						}
+						else{
+							// echo mysql_num_rows($sql);
+							// while($row = mysql_fetch_array($result)	) {
+
+								?>
+								<tr>
+									<!-- <th scope="row">1</th> -->
+									<!-- <td>KOREK</td> -->
+									<!-- <td>dibuat dengan >bahan< dan dengan alat >alat<</td> -->
+									<!-- <td style="text-align: center;"><img src="img/korek.jpg" style="width: 50px; height: 50px;"></td> -->
+									<!-- <td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td> -->
+									<!-- <td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td> -->
+									<th style="text-align: center;"><?php echo $id;$id++; ?></th>
+									<!-- <td><?php echo $row['judul_CT'] ;?></td> -->
+									<!-- <td><?php echo $row['bahan_CT'] ;?></td> -->
+									<!-- <td><?php echo $row['alat_CT'] ;?></td> -->
+									<!-- <td><?php echo $row['deskr'] ;?></td> -->
+									<td></td>
+
+								</tr>
+							<?php
+							// }
+						}
+						?>
 					</tbody>
 				</table>
 				<div class="row">
@@ -265,6 +292,11 @@ echo "Connected successfully";
 				</div>
 
 			</div>
+
+
+			//UPDATE CT
+
+
 			<div class="modal fade" id="modal_update" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
@@ -316,6 +348,11 @@ echo "Connected successfully";
 				</div>
 			</div>
 
+
+			<!-- END UPDATE FOOTER -->
+			<!-- ADD TOOL -->
+
+
 			<div class="modal fade" id="modal_add_alat" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
@@ -327,23 +364,22 @@ echo "Connected successfully";
 						</div>
 
 						<!-- Modal body -->
-						<div class="modal-body" >
-							
-							<form action="" style="margin-bottom: 0px;">
+						<div class="modal-body"  style="text-align: right;">
+							<form action="Admin_CreatingTool_Add_action.php" enctype="multipart/form-data" method="POST" >
+								
 								<div class="label_text">JUDUL</div>
 								<input type="text" name="judul" placeholder="Judul Creating Tool" class="text_input" required>
 								<div class="label_text">BAHAN*</div>
 								<input type="text" name="bahan" placeholder="Bahan 1, Bahan 2, Bahan 3" class="text_input" required>
 								<div class="label_text">ALAT*</div>
 								<input type="text" name="alat" placeholder="Alat 1, Alat 2, Alat 3" class="text_input" required>
+								<div class="label_text">DESKRIPSI*</div>
+								<textarea name="description" placeholder="Description" required class="text_input" rows="6"></textarea>
 								<div class="label_text">GAMBAR*</div>
-								<!-- <input type="text" name="nama" placeholder="Nama" class="text_input"> -->
 								<input type="file" name="gambar" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
-								<div style="width: 100%; text-align: right;">
 
-									<button type="submit" class="btn btn-primary" style="margin-top: 20px;" style=""><i class="fas fa-plus-circle"></i>       CONFRIM</button>
-									<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
-								</div>
+								<button type="SUBMIT" class="btn btn-primary" style="margin-top: 20px;"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+								<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
 							</form>
 
 						</div>
@@ -356,6 +392,12 @@ echo "Connected successfully";
 					</div>
 				</div>
 			</div>
+
+
+			<!-- ADD TOOL -->
+
+
+
 
 
 			<!-- KONTAIN END -->
