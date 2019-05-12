@@ -1,6 +1,10 @@
 <!--  link component : https://use.fontawesome.com/releases/v5.8.1/css/all.css -->
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+<?php
+include "koneksi.php";
+$query = mysqli_query($connection,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
+?>
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -172,11 +176,11 @@
 		<div class="row">
 
 			<div class="col-sm-12">
-				<h1 style="text-align: center;">TABEL PENYAKIT</h1>
+				<h1 style="text-align: center;">EDIT DESEASE SECTION</h1>
 			</div>
 			<div class="col-sm-8">
 				<div style="margin-top: 40px;margin-bottom: 10px;">
-					<button class="btn btn-primary" data-toggle="modal" data-target="#modal_add_penyakit"><i class="fas fa-plus-circle"></i>     TAMBAH PENYAKIT</button>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#modal_add_penyakit"><i class="fas fa-plus-circle"></i>     ADD DESEASE</button>
 				</div>
 			</div>
 			<div class="col-sm-4" style="text-align: right;">
@@ -195,72 +199,27 @@
 					<th scope="col">No.</th>
 					<th scope="col">NAMA</th>
 					<th scope="col">KETERANGAN</th>
-					<th scope="col" style="text-align: center;">FOTO</th>
+					<th scope="col" style="text-align: center;">GAMBAR</th>
 					<th scope="col" colspan="2" style="text-align: center;">HANDEL</th>
 				</tr>
 			</thead>
+		
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>DIARE</td>
-					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
-					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
-					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>					
-													
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>DEMAM BERDARAH</td>
-					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
-					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
-					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>DIARE</td>
-					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
-					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
-					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
-				</tr>
-				<tr>
-					<th scope="row">4</th>
-					<td>DEMAM BERDARAH</td>
-					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
-					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
-					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
-				</tr>
-				<tr>
-					<th scope="row">5</th>
-					<td>DIARE</td>
-					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
-					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
-					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
-				</tr>
-				<tr>
-					<th scope="row">6</th>
-					<td>DEMAM BERDARAH</td>
-					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
-					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
-					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
-					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
-					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
-					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
-				</tr>
+				<?php if(mysqli_num_rows($query)>0){ ?>
+        <?php
+            $no = 1;
+            while($data = mysqli_fetch_array($query)){
+        ?>
+        <tr>
+            <td><?php echo $no ?></td>
+            <td><?php echo $data["Nama"];?></td>
+            <td><?php echo $data["Keterangan"];?></td>
+            <td><img src="<?php echo $data["Gambar"];?>"></td>
+            <td style="text-align: center;"><a href="hapus-aksi.php? id=<?php echo $data['id']; ?>"><button type="button"  class="btn btn-danger">DELETE</button></a></td>
+			<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+        </tr>
+        <?php $no++; } ?>
+        <?php } ?>
 			
 			</tbody>
 		</table>
@@ -376,39 +335,39 @@
 			<div class="modal-content">
 
 				<!-- Modal Header -->
-				<div class="modal-header" style="text-align: center;">
-					<h4 class="modal-title" >TAMBAH PENYAKIT</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
+						<div class="modal-header" style="text-align: center;">
+							<h4 class="modal-title" >ADD DESEASE SECTION</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
 
-				<!-- Modal body -->
-				<div class="modal-body">
-					<div class="row" style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
-						<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
+						<!-- Modal body -->
+						<div class="modal-body" >
+							
+							<form action="input-aksi.php " enctype="multi" method="post" style="margin-bottom: 0px;">
+								<div class="label_text">Nama</div>
+								<input type="text" name="nama" placeholder="Nama Penyakit" class="text_input" required>
+								<div class="label_text">Keterangan*</div>
+								<textarea type="text" name="keterangan" placeholder="Masukkan Keterangan Penyakit" class="text_input" required></textarea>
+								<div class="label_text">GAMBAR*</div>
+								<!-- <input type="text" name="nama" placeholder="Nama" class="text_input"> -->
+								<input type="file" name="gambar" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
+								<div style="width: 100%; text-align: right;">
+
+									<button type="submit" class="btn btn-primary" style="margin-top: 20px;" style=""><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
+								</div>
+							</form>
+
+						</div>
+
+						<!-- Modal footer -->
+						<div class="modal-footer" style="text-align: right;">
+							@2019
+						</div>
+
 					</div>
-					<div class="row"style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
-						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-					</div>
-					<div class="row"style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
-						<input type="file" id="file-with-current" class="input-default-js">
-
-						<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
-					</div>
 				</div>
-
-
-				<!-- Modal footer -->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-
 			</div>
-		</div>
-	</div>
 	<!-- MODAL END -->
 	
 	<!-- MODAL START -->
@@ -418,39 +377,41 @@
 			<div class="modal-content">
 
 				<!-- Modal Header -->
-				<div class="modal-header" style="text-align: center;">
-					<h4 class="modal-title" >UPDATE</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
+						<div class="modal-header" style="text-align: center;">
+							<h4 class="modal-title" >UPDATE DESEASE SECTION</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
 
-				<!-- Modal body -->
-				<div class="modal-body">
-					<div class="row" style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
-						<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
+						<!-- Modal body -->
+						<div class="modal-body" >
+							
+							<form action="edit-aksi.php" enctype="multi" method="post" style="margin-bottom: 0px;">
+								<input  type="hidden" value="<?php echo $data['id'];?>" name="id">
+								<div class="label_text">Nama</div>
+								<input type="text" name="nama1" placeholder="Nama Penyakit" class="text_input" required>
+								<div class="label_text">Keterangan*</div>
+								<textarea type="text" name="keterangan1" placeholder="Masukkan Keterangan Penyakit" class="text_input" required></textarea>
+								<div class="label_text">GAMBAR*</div>
+								<!-- <input type="text" name="nama" placeholder="Nama" class="text_input"> -->
+								<input type="file" name="gambar1" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
+								<div style="width: 100%; text-align: right;">
+
+									<button type="submit" class="btn btn-primary" style="margin-top: 20px;" style=""><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
+								</div>
+							</form>
+
+						</div>
+
+						<!-- Modal footer -->
+						<div class="modal-footer" style="text-align: right;">
+							@2019
+						</div>
+
 					</div>
-					<div class="row"style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
-						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-					</div>
-					<div class="row"style="margin-top: 10px;">
-						<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
-						<input type="file" id="file-with-current" class="input-default-js">
-
-						<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
-					</div>
 				</div>
-
-
-				<!-- Modal footer -->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-
 			</div>
-		</div>
-	</div>
+
 	<!-- MODAL END -->
 	<!-- End footer Area -->
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
