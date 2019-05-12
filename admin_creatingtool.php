@@ -226,40 +226,135 @@ echo "Connected successfully";
 							<th scope="col" style="text-align: center;">Bahan</th>
 							<th scope="col" style="text-align: center;">Alat</th>
 							<th scope="col" style="text-align: center;">Keterangan</th>
-							<th scope="col" style="text-align: center;">foto</th>
+							<th scope="col" style="text-align: center;">Foto</th>
+							<th scope="col" style="text-align: center;">-</th>
+							<th scope="col" style="text-align: center;">-</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-						$sql = 'SELECT * FROM `creatingtool`';
+						$sql = "SELECT * FROM `creatingtool`";
 						$retval = mysqli_query( $conn, $sql );
 						$id =1;
 
+						// echo $retval;
+
 						if(! $retval ) {
 							die('Could not get data: ' . mysql_error());
+							echo "GAGAL";
 						}
 						else{
-							// echo mysql_num_rows($sql);
-							// while($row = mysql_fetch_array($result)	) {
+							// echo "MASUK";
+							// echo mysqli_num_rows($retval);
+							while($row = mysqli_fetch_array($retval) AND $id<10) {
 
 								?>
 								<tr>
-									<!-- <th scope="row">1</th> -->
-									<!-- <td>KOREK</td> -->
-									<!-- <td>dibuat dengan >bahan< dan dengan alat >alat<</td> -->
-									<!-- <td style="text-align: center;"><img src="img/korek.jpg" style="width: 50px; height: 50px;"></td> -->
-									<!-- <td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td> -->
-									<!-- <td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td> -->
 									<th style="text-align: center;"><?php echo $id;$id++; ?></th>
-									<!-- <td><?php echo $row['judul_CT'] ;?></td> -->
-									<!-- <td><?php echo $row['bahan_CT'] ;?></td> -->
-									<!-- <td><?php echo $row['alat_CT'] ;?></td> -->
-									<!-- <td><?php echo $row['deskr'] ;?></td> -->
-									<td></td>
+									<td><?php echo $row['judul_CT'] ;?></td>
+									<td><?php echo $row['bahan_CT'] ;?></td>
+									<td><?php echo $row['alat_CT'] ;?></td>
+									<td><?php echo $row['deskr'] ;?></td>
+									<td><img src="<?php echo $row['dir_img_CT'] ?>" style="width: 40px; height: 40px;" ></td>
+									<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_delete<?php echo $row['id_CT'] ?>" class="btn btn-danger">DELETE</button></td>
+									<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update<?php echo $row['id_CT'] ?>" class="btn btn-primary">UPDATE</button></td>
 
+
+									<!-- UPDATE CT -->
+
+
+									<div class="modal fade" id="modal_update<?php echo $row['id_CT'] ?>" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content" style="text-align: right;">
+
+												<!-- Modal Header -->
+												<div class="modal-header" style="text-align: center;">
+													<h4 class="modal-title" >UPDATE SECTION (<?php echo $row['judul_CT']; ?>)</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+
+												<!-- Modal body -->
+												<div class="modal-body">
+													<form action="Admin_CreatingTool_Update_action.php" enctype="multipart/form-data" method="POST" >
+														<input type="text" name="id_CT" value="<?php echo $row['id_CT'] ?>" hidden>
+														<div class="label_text">JUDUL</div>
+														<input type="text" name="judul" placeholder="Judul Creating Tool" class="text_input" value="<?php echo $row['judul_CT'] ?>" required>
+														<div class="label_text">BAHAN*</div>
+														<input type="text" name="bahan" placeholder="Bahan 1, Bahan 2, Bahan 3" class="text_input" value="<?php echo $row['bahan_CT'] ?>" required>
+														<div class="label_text">ALAT*</div>
+														<input type="text" name="alat" placeholder="Alat 1, Alat 2, Alat 3" class="text_input" 
+														value="<?php echo $row['alat_CT'] ?>" required>
+														<div class="label_text">DESKRIPSI*</div>
+														<textarea name="description" placeholder="Description" required class="text_input" rows="6"><?php echo $row['deskr'] ?></textarea>
+														<div class="label_text">GAMBAR*</div>
+														<div style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
+															<img src="<?php echo $row['dir_img_CT'] ?>" style="width: 180px; text-align: left;">
+														</div>
+														<input type="file" name="gambar" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
+
+														<button type="SUBMIT" class="btn btn-primary" style="margin-top: 20px;"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+														<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
+													</form>
+
+												</div>
+
+
+												<!-- Modal footer -->
+												<div class="modal-footer">
+												</div>
+
+											</div>
+										</div>
+									</div>
+									
+
+									<!-- END UPDATE CT -->
+									<!-- DELETE CT -->
+
+									<div class="modal fade" id="modal_delete<?php echo $row['id_CT'] ?>" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content" style="text-align: right;">
+
+												<!-- Modal Header -->
+												<div class="modal-header" style="text-align: center;">
+													<h4 class="modal-title" >DELETE SECTION</h4>
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+												</div>
+
+												<!-- Modal body -->
+												<div class="modal-body" style="text-align: center;">
+													<h5>APAKAH ANDA YAKIN INGIN MENGHAPUS <?php echo $row['judul_CT']; ?> DARI DAFTAR CREATING TOOLS?
+													</h5>
+													<!-- <br> -->
+													<div style="width: 100%; text-align: center;">
+														<form action="Admin_CreatingTool_Delete_action.php" method="POST">
+
+															<input type="text" name="id_CT" value="<?php echo $row['id_CT'] ?>">
+															
+															<button type="SUBMIT" class="btn btn-danger"> TETAP HAPUS</button>
+															<button class="btn btn-warning">CANCEL</button>	
+														</form>
+													</div>
+													<br>
+													<h6 style="text-align: left;">
+														*SESUATU YANG SUDAH DIHAPUS TIDAK DAPAT DIKEMBALIKAN
+													</h6>
+													
+												</div>
+
+
+												<!-- Modal footer -->
+												<div class="modal-footer">
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<!-- END DELETE CT -->
 								</tr>
-							<?php
-							// }
+								<?php
+							}
 						}
 						?>
 					</tbody>
@@ -294,62 +389,6 @@ echo "Connected successfully";
 			</div>
 
 
-			//UPDATE CT
-
-
-			<div class="modal fade" id="modal_update" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-
-						<!-- Modal Header -->
-						<div class="modal-header" style="text-align: center;">
-							<h4 class="modal-title" >UPDATE</h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-						</div>
-
-						<!-- Modal body -->
-						<div class="modal-body">
-							<div class="row" style="margin-top: 10px;">
-								<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
-								<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
-							</div>
-							<div class="row"style="margin-top: 10px;">
-								<div class="col col-sm-4" style=" padding-top: 5px;">BAHAN</div>
-								<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-							</div>
-							<div class="row"style="margin-top: 10px; " >
-								<div class="col col-sm-4"  style=" padding-top: 5px;">KATEGORI</div>
-								<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-							</div>										
-							<div class="row"style="margin-top: 10px;"  style=" padding-top: 5px;">
-								<div class="col col-sm-4" style=" padding-top: 5px;">ALAT</div>
-								<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-							</div>
-							<div class="row"style="margin-top: 10px;">
-								<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
-								<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-							</div>
-							<div class="row"style="margin-top: 10px;">
-								<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
-								<input type="file" id="file-with-current" class="input-default-js">
-
-								<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
-							</div>
-						</div>
-
-
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-
-			<!-- END UPDATE FOOTER -->
 			<!-- ADD TOOL -->
 
 

@@ -4,7 +4,7 @@
 </head>
 <body>
 
-	<?php 
+	<?php
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -19,7 +19,13 @@
 	echo "Connected successfully";
 
 
-	//AMBIL DATA DARI FORM
+
+
+
+
+
+//IF DATA IMAGE CHANGED
+//AMBIL DATA DARI FORM
 
 	$nama_file = $_FILES['gambar']['name'];
 	$ukuran_file = $_FILES['gambar']['size'];
@@ -45,7 +51,8 @@
 
 		if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 
-			// if($ukuran_file < 1044070){			
+			// if($ukuran_file < 1044070){	
+			$id = $_POST['id_CT'];		
 
 			$dir_image = 'img/CT/'.$nama_file;
 
@@ -59,12 +66,12 @@
 
 			move_uploaded_file($tmp_file, $dir_image);
 
-			$sql = "INSERT INTO `creatingtool`(`judul_CT`, `bahan_CT`, `alat_CT`, `dir_img_CT`,`deskr`) VALUES ('".$judul."','".$bahan."','".$alat."','".$dir_image."','".$desk."')";
+			$sql = "UPDATE `creatingtool` SET `judul_CT`='".$judul."' ,`bahan_CT`='".$bahan."', `alat_CT`='".$alat."', `dir_img_CT`='".$dir_image."', `deskr`='".$desk."' WHERE id_CT = '".$id."'";
 
 			if($conn->query($sql)){
 				?>
 				<script type="text/javascript">
-					alert("SUKSES");
+					alert("UPDATE SUKSES");
 					window.location.href = "admin_creatingtool.php";
 				</script>
 
@@ -72,7 +79,7 @@
 			}else{
 				?>
 				<script type="text/javascript">
-					alert("GAGAL :C");
+					alert("UPDATE GAGAL :C");
 					window.location.href = "admin_creatingtool.php";
 				</script>
 				<?php
@@ -81,7 +88,35 @@
 				// echo 'UKURAN FILE TERLALU BESAR';
 			// }
 		}else{
-			echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
+
+			$judul = $_POST['judul'];
+
+			$bahan = $_POST['bahan'];
+
+			$alat = $_POST['alat'];
+
+			$desk = $_POST['description'];
+
+			$sql = "UPDATE `creatingtool` SET `judul_CT`='".$judul."' ,`bahan_CT`='".$bahan."', `alat_CT`='".$alat."',  `deskr`='".$desk."' WHERE id_CT = '".$id."'";
+
+			if($conn->query($sql)){
+				?>
+				<script type="text/javascript">
+					alert("UPDATE SUKSES");
+					window.location.href = "admin_creatingtool.php";
+				</script>
+				<?php
+			}
+			else{
+				?>
+				<script type="text/javascript">
+					alert("UPDATE GAGAL :C");
+					window.location.href = "admin_creatingtool.php";
+				</script>
+				<?php
+			}
+
+
 		}
 	}
 	// $conn->close();
