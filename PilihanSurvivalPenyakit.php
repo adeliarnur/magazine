@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+<?php
+include "koneksi.php";
+$query = mysqli_query($connection,"SELECT * FROM desease ORDER BY id ASC");
+?>
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +34,7 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+
 		<header>
 			<div class="header-top">
 				<div class="container">
@@ -126,33 +131,80 @@
 					</div>
 				</div>
 			</section>
+			<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+			<div class="row">
+			
+			<table class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col"colspan="5">Penyakit</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php if(mysqli_num_rows($query)>0){ ?>
+						<?php while($data = mysqli_fetch_array($query)){ ?>
+							<tr>
+								<td><img src="<?php echo $data["dir_img_penyakit"];?>"></td>
+								<td><h4><?php echo $data["judul_penyakit"];?></h4></td>
+								<td><?php echo $data["deskr"];?></td>
+							</tr>
+						<?php } ?>
+				    <?php } ?>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
+			<!--<table class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col" colspan="6">Penyakit</th>
+					</tr>
+				</thead>
+
+			<tbody>
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12 post-list">
-							<!-- Start latest-post Area -->
+							<!-- Start latest-post Area 
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Penyakit</h4>
+							<h4 class="cat-title">Penyakit</h4>-->
+					
+					<!--<?php if(mysqli_num_rows($query)>0){ ?>
+						<?php
+						$no=1;
+						while($data = mysqli_fetch_array($query)){
+							?>
+							<tr>
+								<td><?php echo $no ?></td>
+								<td><?php echo $data["judul_penyakit"];?></td>
+								<td><?php echo $data["deskr"];?></td>
+								<td><img src="<?php echo $data["dir_img_penyakit"];?>"></td>
 
-
-								<div class="single-latest-post row align-items-center">
+								<!--<div class="single-latest-post row align-items-center">
 									<div class="col-lg-3 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/penyakit1.jpg" alt="">
+											<td><img src="<?php echo $data["dir_img_penyakit"];?>"></td>
 										</div>
 									</div>
 									<div class="col-lg-9 post-right">
 										<a href="image-post.html">
-											<h4><a href="PersiapanDiri-post.html">Diare</a></h4>
+											<td><h4><a href="PersiapanDiri-post.html"><?php echo $data["judul_penyakit"];?></a></h4></td>
 										</a>
-										<p>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</p>
+										<td><p><?php echo $data["deskr"];?></p></td>
 									</div>
-								</div>	
+								</div>-->
+							<!--</tr>
+							<?php $no++; } ?>
+						<?php } ?> -->
+				
 
-								<div class="single-latest-post row align-items-center">
+								<!--<div class="single-latest-post row align-items-center">
 									<div class="col-lg-3 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
@@ -165,18 +217,20 @@
 										</a>
 										<p>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</p>
 									</div>
-								</div>
+								</div>-->
 
 
-							</div>
-							<!-- End latest-post Area -->
+							<!--</div>
+							<!-- End latest-post Area 
 
 						</div>
 				</div>
 			</div>
-		</section>
-			<!-- End latest-post Area -->
-		</div>
+		</section>-->
+
+<!--</tbody>
+			<!-- End latest-post Area 
+		</div>-->
 		
 		<!-- start footer Area -->
 		<footer class="footer-area section-gap">
@@ -261,5 +315,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/mail-script.js"></script>
 		<script src="js/main.js"></script>
+
 	</body>
 </html>
