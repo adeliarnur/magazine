@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+<?php
+include "koneksi.php";
+$query = mysqli_query($connection,"SELECT * FROM drug ORDER BY id ASC");
+?>
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -129,11 +133,36 @@
 			</section>
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+				<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+			<div class="row">
+			
+			<table class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col"colspan="5">Obat</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php if(mysqli_num_rows($query)>0){ ?>
+						<?php while($data = mysqli_fetch_array($query)){ ?>
+							<tr>
+								<td><img src="<?php echo $data["dir_img_obat"];?>"></td>
+								<td><h4><?php echo $data["judul_obat"];?></h4></td>
+								<td><?php echo $data["deskr"];?></td>
+							</tr>
+						<?php } ?>
+				    <?php } ?>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+			<!--<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12 post-list">
-							<!-- Start latest-post Area -->
+							<!-- Start latest-post Area 
 							<div class="latest-post-wrap">
 								<h4 class="cat-title">Obat</h4>
 
@@ -176,14 +205,14 @@
 
 
 							</div>
-							<!-- End latest-post Area -->
+							<!-- End latest-post Area 
 
 						</div>
 				</div>
 			</div>
 		</section>
-			<!-- End latest-post Area -->
-		</div>
+			<!-- End latest-post Area 
+		</div>-->
 		
 		<!-- start footer Area -->
 		<footer class="footer-area section-gap">

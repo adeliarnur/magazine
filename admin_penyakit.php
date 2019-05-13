@@ -214,6 +214,7 @@ $query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
 
 
 
+<<<<<<< Updated upstream
 					<table class="table table-striped table-bordered">
 						<thead class="thead-dark">
 							<tr style="text-align: center;">
@@ -223,6 +224,111 @@ $query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
 								<th scope="col" style="text-align: center;">GAMBAR</th>
 								<th scope="col" style="text-align: center;">-</th>
 								<th scope="col" style="text-align: center;">-</th>
+=======
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">No.</th>
+					<th scope="col">NAMA</th>
+					<th scope="col">KETERANGAN</th>
+					<th scope="col" style="text-align: center;">FOTO</th>
+					<th scope="col" colspan="2" style="text-align: center;">HANDEL</th>
+				</tr>
+			</thead>
+		
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>DIARE</td>
+					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
+					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
+					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>					
+													
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>DEMAM BERDARAH</td>
+					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
+					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
+					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>DIARE</td>
+					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
+					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
+					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+				</tr>
+				<tr>
+					<th scope="row">4</th>
+					<td>DEMAM BERDARAH</td>
+					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
+					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
+					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+				</tr>
+				<tr>
+					<th scope="row">5</th>
+					<td>DIARE</td>
+					<td>Diare merupakan sebuah kondisi ketika pengidapnya melakukan buang air besar (BAB) lebih sering dari biasanya. 
+					Selain itu, diare juga ditandai dengan kondisi feses yang lebih encer dari biasanya. 
+					Penyakit ini biasanya berlangsung selama beberapa hari dan dalam kasus tertentu bisa berlangsung hingga berminggu-minggu.</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+				</tr>
+				<tr>
+					<th scope="row">6</th>
+					<td>DEMAM BERDARAH</td>
+					<td>Demam berdarah dengue (DBD) adalah penyakit menular yang disebabkan oleh virus dengue yang ditularkan melalui 
+					gigitan nyamuk Aedes aegypti dan Aedes albopictus. Gejala umumnya timbul 4-7 hari sejak gigitan nyamuk, 
+					dan dapat berlangsung selama 10 hari. Beberapa gejala demam berdarah</td>
+					<td style="text-align: center;"><img src="img/download.png" style="width: 50px; height: 50px;"></td>
+					<td style="text-align: center;"><button type="button" class="btn btn-danger">DELETE</button></td>
+					<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update" class="btn btn-primary">UPDATE</button></td>
+				</tr>
+			
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="col ">
+				BMKG
+			</div>
+			<div class="col col-md-auto ">
+				<div class="text-right" role="toolbar" aria-label="Toolbar with button groups">
+					<div class="btn-group mr-2" role="group" aria-label="First group" >
+						<button type="button" class="btn btn-secondary"> 
+							<i class="fas fa-angle-double-left"></i>
+						</button>
+						<button type="button" class="btn btn-secondary">
+							<i class="fas fa-angle-left"></i>
+						</button>
+						<button class="btn btn-secondary">
+							PAGE 1
+						</button>
+						<button type="button" class="btn btn-secondary">
+							<i class="fas fa-angle-right"></i>
+						</button>
+						<button type="button" class="btn btn-secondary">
+							<i class="fas fa-angle-double-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+>>>>>>> Stashed changes
 
 							</tr>
 						</thead>
@@ -346,6 +452,7 @@ $query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
 
 					</div>
 
+<<<<<<< Updated upstream
 
 
 
@@ -484,3 +591,73 @@ $query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
 						<script src="js/main.js"></script>
 					</body>
 					</html>
+=======
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+	<!-- MODAL END -->
+	
+	<!-- MODAL START -->
+	<!-- The Modal -->
+	<div class="modal fade" id="modal_update" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header" style="text-align: center;">
+					<h4 class="modal-title" >UPDATE</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row" style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
+						<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
+					</div>
+					<div class="row"style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
+						<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
+					</div>
+					<div class="row"style="margin-top: 10px;">
+						<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
+						<input type="file" id="file-with-current" class="input-default-js">
+
+						<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+					</div>
+				</div>
+
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- MODAL END -->
+	<!-- End footer Area -->
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+			<script src="js/easing.min.js"></script>
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>
+			<script src="js/mn-accordion.js"></script>
+			<script src="js/jquery-ui.js"></script>
+			<script src="js/jquery.nice-select.min.js"></script>
+			<script src="js/owl.carousel.min.js"></script>
+			<script src="js/mail-script.js"></script>
+			<script src="js/main.js"></script>
+		</body>
+		</html>
+>>>>>>> Stashed changes

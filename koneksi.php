@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "bertahan_hidup";
+$dbname = "psi";
 
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 if (!$connection){
