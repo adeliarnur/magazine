@@ -64,7 +64,7 @@
 
 										<form action="proses2.php" method="POST">
 										<div class="form-group form-inline">
-											<input type="text" class="form-control" value="" placeholder="masukkan nama" name="nama">
+											<input type="text" class="form-control" value="" placeholder="masukkan nama" name="nama" required oninvalid="this.setCustomValidity('Nama Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
@@ -80,12 +80,12 @@
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" placeholder="Masukkan Nama Ayah" name="namaayah">
+											value="" class="form-control" placeholder="Masukkan Nama Ayah" name="namaayah" required oninvalid="this.setCustomValidity('Nama Ayah Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control"  required="" placeholder="Masukkan Nama Ibu" name="namaibu">
+											value="" class="form-control"  required="" placeholder="Masukkan Nama Ibu" name="namaibu" required oninvalid="this.setCustomValidity('Nama Ibu Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
@@ -97,28 +97,28 @@
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" required=""  placeholder="Usia" name="usia">
+											value="" class="form-control" required=""  placeholder="Usia" name="usia" required oninvalid="this.setCustomValidity('Usia Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" required=""  placeholder="Kota Lahir" name="kota">
+											value="" class="form-control" required=""  placeholder="Kota Lahir" name="kota" required oninvalid="this.setCustomValidity('Kota Lahir Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" required="" placeholder="Alamat Terakhir" name="alamat">
+											value="" class="form-control" required="" placeholder="Alamat Terakhir" name="alamat" required oninvalid="this.setCustomValidity('Alamat Terakhir Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" required="" placeholder ="Kewarganegaraan" name="negara">
+											value="" class="form-control" required="" placeholder ="Kewarganegaraan" name="negara" required oninvalid="this.setCustomValidity('Negara Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 
 										<div class="form-group">
 											<textarea class="form-control mb-10" 
-											value="" rows="5" placeholder="Deskripsi Orang Hilang" required="" onblur="this.placeholder = 'Deskripsi Orang Hilang'" name="deskripsi"></textarea>
+											value="" rows="5" placeholder="Deskripsi Orang Hilang" required oninvalid="this.setCustomValidity('Deskripsi Belum Diisi')" oninput="setCustomValidity('')" onblur="this.placeholder = 'Deskripsi Orang Hilang'" name="deskripsi"></textarea>
 										</div>
 
 										<button type="submit" class="primary-btn text-uppercase" name="save_user">Post</button>

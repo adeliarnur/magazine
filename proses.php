@@ -42,9 +42,10 @@ if (isset($_POST['save'])){
 		$result = mysqli_query($mysqli, $query) OR die(mysqli_error($mysqli));
 
 	}
+	
+	echo "<script>alert('Data Berhasil Ditambahkan'); </script>";
+ 	echo "<script>window.location='AdminPilihanOrangHilang.php';</script>";
 
-
-	header("location: AdminPilihanOrangHilang.php");
 }
 
 
@@ -70,7 +71,8 @@ if (isset($_POST['update'])){
 
 	$_SESSION['message'] = "Data Disimpan!";
 	$_SESSION['msg_type'] = "Sukses";	
-	header("location: AdminPilihanOrangHilang.php");
+	echo "<script>alert('Data Berhasil Diupdate'); </script>";
+ 	echo "<script>window.location='AdminPilihanOrangHilang.php';</script>";
 }
 
 //////////////////////////////////////////////////////////////////////Delete data orang
@@ -82,7 +84,8 @@ if (isset($_GET['delete'])){
 	$_SESSION['message'] = "Data Dihapus!";
 	$_SESSION['msg_type'] = "bahaya";
 
-	header("location: AdminPilihanOrangHilang.php");
+	echo "<script>alert('Data Berhasil Dihapus'); </script>";
+ 	echo "<script>window.location='AdminPilihanOrangHilang.php';</script>";
 
 }
 ////////////////////////////////////////////////////////////////////Read data orang ketika update di form

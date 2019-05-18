@@ -23,7 +23,8 @@ if(isset($_GET['accept'])){
 	$_SESSION['message'] = "Data Diterima!";
 	$_SESSION['msg_type'] = "accept";
 
-	header("location: AdminLaporan.php");
+	echo "<script>alert('Data Telah Diterima!'); </script>";
+ 	 echo "<script>window.location='AdminLaporan.php';</script>";
 }
 
 if(isset($_GET['reject'])){
@@ -33,7 +34,8 @@ if(isset($_GET['reject'])){
 	$_SESSION['message'] = "Data Ditolak!";
 	$_SESSION['msg_type'] = "reject";
 
-	header("location: AdminLaporan.php");
+	echo "<script>alert('Data Telah Ditolak!'); </script>";
+ 	 echo "<script>window.location='AdminLaporan.php';</script>";
 }
 
 if (isset($_POST['save_user'])){
@@ -67,7 +69,8 @@ if (isset($_POST['save_user'])){
 	// $_SESSION['message'] = "Data Disimpan!";
 	// $_SESSION['msg_type'] = "Sukses";
 
-	header("location: TambahOrangHilang.php");
+	echo "<script>alert('Data Berhasil Ditambahkan'); </script>";
+ echo "<script>window.location='TambahOrangHilang.php';</script>";
 }
 
 
