@@ -1,3 +1,7 @@
+<?php 
+	require('konek.php');
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
@@ -28,155 +32,85 @@
 		<link rel="stylesheet" href="css/owl.carousel.css">
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<link rel="stylesheet" href="css/main.css">
+
+
+
 	</head>
 	<body>
 		<header>
-			<div class="header-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
-							<ul>
-								<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>+440 012 3654 896</span></a></li>
-								<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>BMKG@gmail.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="logo-wrap">
-				<div class="container">
-					<div class="row justify-content-between align-items-center">
-						<div class="col-lg-2 col-md-2 col-sm-10 logo-left no-padding">
-							<a href="index.html">
-								<img class="img-fluid" src="img/BMKG.png" alt="">
-							</a>
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="img/Artboard.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container main-menu" id="main-menu">
-				<div class="row align-items-center justify-content-between">
-					<nav id="nav-menu-container">
-						<ul class="nav-menu">
-							<li class="menu-active"><a href="index.html">Beranda</a></li>
-
-							<li class="menu-has-children"><a href="">Materi</a>
-								<ul>
-									<li class="menu-has-children"><a href="">Pra Bencana</a>
-										<ul>
-											<li><a href="PilihanPersiapanDiri.html">Persiapan Diri</a></li>
-											<li><a href="PilihanPersiapanIndoor.html">Persiapan Didalam Rumah</a></li>
-											<li><a href="PilihanPersiapanOutdoor.html">Persiapan Diluar Rumah</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Survival</a>
-										<ul>
-											<li><a href="PilihanSurvivalCT.html">Creating tools</a></li>
-											<li><a href="PilihanSurvivalPenyakit.html">Penyakit</a></li>
-											<li><a href="PilihanSurvivalObat.html">Obat</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							
-							<li><a href="">Cari Orang</a>
-								<ul>
-									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
-									<li><a href="PilihanOrangDitemukan.html">Orang Ditemukan</a></li>
-								</ul>
-							</li>
-							
-
-							<li class="menu-has-children"><a href="">Info Bencana</a>
-							<ul>
-								<li><a href="StorageBahanMakan.html">Storage Bahan Makanan</a></li>
-								<li><a href="StatusKeadaanBencana.html">Status Keadaan Bencana</a></li>
-							</li>
-					</ul>
-							<li><a href="kontak.html">Kontak</a></li>
-					</nav>
-				</div>
-			</div>
+			<?php include 'header.php'; ?>
 		</header>
 		
-		<div class="site-main-container">
-			<!-- Start top-post Area -->
-			<section class="top-post-area pt-10">
-				<div class="container no-padding">
-					<div class="row">
-						<div class="col-lg-12">
-							<!-- <div class="hero-nav-area">
-								<h1 class="text-white">Archive Posts</h1>
-								<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="archive.html">Archive Posts </a></p>
-							</div> -->
-						</div>
-						<div class="col-lg-12">
-							<!-- <div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
-							</div> -->
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End top-post Area -->
-			<!-- Start latest-post Area -->
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12 post-list">
 							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
-								<h4 class="cat-title">Creating Tools</h4>
+					<div class="latest-post-wrap">
+								<h4 class="cat-title">Nomor Penting</h4>
+								<br>
+								<br>
+								<form action="" method="GET">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" placeholder="Cari Berdasarkan Kota" name="namakota" aria-label="namakota" aria-describedby="basic-addon2">
+											<div class="input-group-append">
+												<button type="submit" class="btn btn-primary" name="cari">Cari</button>
+											</div>
+									</div>
+								</form>
 
+								<center>
+									<table style="width:100%" cellpadding="10" border="1px">
+									  <tr bgcolor="F6214B" style="color: white">
+									  	<th><center>Kota</center></th>
+									    <th><center>Lembaga</center></th>
+									    <th><center>Nama Kontak</center></th> 
+									    <th><center>Nomor Kontak</center></th>
+									    <th><center>Cluster</center></th>
+									  </tr>
+													<?php
+													$mysqli = new mysqli('localhost', 'root', '', 'psi') or die(mysql_error($mysqli));
 
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-3 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/CT1.png" alt="">
-										</div>
-									</div>
-									<div class="col-lg-9 post-right">
-										<a href="image-post.html">
-											<h4><a href="SurvivalCT-post.html">Cara membuat kompor sederhana untuk memasak</a></h4>
-										</a>
-									</div>
-								</div>	
+													if(isset($_GET['cari'])){
+														$cari = $_GET['namakota'];
+														$data = $mysqli->query("SELECT * FROM kontak WHERE nama_kota like '%".$cari."%'");
+													}else{
+														//$mysqli = new mysqli('localhost', 'root', '', 'psi') or die(mysql_error($mysqli));
+														$data = $mysqli->query("SELECT * FROM kontak ORDER BY nama_kota ASC");
+														}
+														?>
 
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-3 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/CT2.png" alt="">
-										</div>
-									</div>
-									<div class="col-lg-9 post-right">
-										<a href="image-post.html">
-											<h4><a href="PersiapanDiri-post.html">Cara membuat tas sederhana dari celana </a></h4>
-										</a>
-									</div>
+									  				<?php		while ($row = $data->fetch_assoc()): ?>
+									  
+									  <tr>
+									  	<td><?php echo $row['nama_kota']; ?></td>
+									    <td><?php echo $row['lembaga']; ?></td>
+									    <td><?php echo $row['nama_kontak']; ?></td> 
+									    <td><?php echo $row['no_kontak']; ?></td>
+									    <td><?php echo $row['cluster']; ?></td>
+									  </tr>
+
+									<?php endwhile; ?>
+									</table>
+
+											<?php
+												function pre_r($array){
+												echo '<pre>';
+												print_r($array);
+												echo '</pre>';
+											}
+										?>
+								</center>
+
 								</div>
-
-
 							</div>
-							<!-- End latest-post Area -->
-
 						</div>
-				</div>
-			</div>
-		</section>
-			<!-- End latest-post Area -->
-		</div>
-		
+						</div>
+					</section>
+
+
+
+
 		<!-- start footer Area -->
 		<footer class="footer-area section-gap">
 			<div class="container">
@@ -260,5 +194,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/mail-script.js"></script>
 		<script src="js/main.js"></script>
+
+
+
+
 	</body>
 </html>
