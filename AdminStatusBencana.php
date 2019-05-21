@@ -150,7 +150,7 @@ include "includes/header-admin.php";
 				<td><?php echo $result[3];?></td>
 				<td><?php echo $result[4];?></td>
 				<td><?php echo $result[0];?></td>
-				<td><button type="button" class="btn btn-danger"><a style="color : white" href="hapus-status.php? id=<?php echo $result[]; ?>">Delete</a>
+				<td><button type="button" class="btn btn-danger"><a style="color : white" href="hapus-status.php? id=<?php echo $result[5]; ?>">Delete</a>
 					</button>
 
 					<button type="button" class="btn btn-success"><a style="color : white" href="edit-status.php? id=<?php echo $result[5]; ?>">Edit</button></td>
