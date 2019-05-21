@@ -1,3 +1,8 @@
+<?php 
+include "koneksi.php";
+$query = mysqli_query($connection,"SELECT * FROM creatingtool ORDER BY id_CT ASC");
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 	<head>
@@ -132,46 +137,27 @@
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
-						<div class="col-lg-12 post-list">
-							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
-								<h4 class="cat-title">Creating Tools</h4>
+					<table class="table table-striped table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col"colspan="5">Creating Tool</th>
+					</tr>
+				</thead>
 
-
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-3 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/CT1.png" alt="">
-										</div>
-									</div>
-									<div class="col-lg-9 post-right">
-										<a href="image-post.html">
-											<h4><a href="SurvivalCT-post.html">Cara membuat kompor sederhana untuk memasak</a></h4>
-										</a>
-									</div>
-								</div>	
-
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-3 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/CT2.png" alt="">
-										</div>
-									</div>
-									<div class="col-lg-9 post-right">
-										<a href="image-post.html">
-											<h4><a href="PersiapanDiri-post.html">Cara membuat tas sederhana dari celana </a></h4>
-										</a>
-									</div>
-								</div>
-
-
-							</div>
-							<!-- End latest-post Area -->
-
-						</div>
-				</div>
+				<tbody>
+					<?php if(mysqli_num_rows($query)>0){ ?>
+						<?php while($data = mysqli_fetch_array($query)){ ?>
+							<tr>
+								<td><img src="<?php echo $data["dir_img_CT"];?>"style="width: 290px;height: 200px;"></td>
+								<td><h4><?php echo $data["judul_CT"];?></h4></td>
+								<td><?php echo $data["deskr"];?></td>
+							</tr>
+						<?php } ?>
+				    <?php } ?>
+						
+					</tbody>
+				</table>
+					</div>
 			</div>
 		</section>
 			<!-- End latest-post Area -->

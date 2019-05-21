@@ -147,7 +147,7 @@ $query = mysqli_query($connection,"SELECT * FROM drug ORDER BY id ASC");
 					<?php if(mysqli_num_rows($query)>0){ ?>
 						<?php while($data = mysqli_fetch_array($query)){ ?>
 							<tr>
-								<td><img src="<?php echo $data["dir_img_obat"];?>"></td>
+								<td ><img src="<?php echo $data["dir_img_obat"];?>"style="width: 290px;height: 200px;"></td>
 								<td><h4><?php echo $data["judul_obat"];?></h4></td>
 								<td><?php echo $data["deskr"];?></td>
 							</tr>
