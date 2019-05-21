@@ -16,7 +16,7 @@ $sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_benc
     VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
 
 
-$stmt = $db->prepare($sql) or die("Gagal mengecek user di database");
+$stmt = $db->prepare($sql) or die("Gagal input status bencana di database");
 // $stmt->bind_param("ssis", $lokasi, $tanggal, $status, $keterangan, $makanan);
 
 if ($stmt->execute() === FALSE) {
