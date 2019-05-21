@@ -2,7 +2,8 @@
 <html lang="zxx" class="no-js">
 <?php
 include "koneksi.php";
-$query = mysqli_query($connection,"SELECT * FROM desease ORDER BY id ASC");
+$query = $connection->query("SELECT * FROM `desease`");
+
 ?>
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -142,8 +143,8 @@ $query = mysqli_query($connection,"SELECT * FROM desease ORDER BY id ASC");
 				</thead>
 
 				<tbody>
-					<?php if(mysqli_num_rows($query)>0){ ?>
-						<?php while($data = mysqli_fetch_array($query)){ ?>
+					<?php if($query->num_rows>0){ ?>
+						<?php while($data =$query->fetch_array()){ ?>
 							<tr>
 								<td><img src="<?php echo $data["dir_img_penyakit"];?>"style="width: 290px;height: 200px;"></td>
 								<td><h4><?php echo $data["judul_penyakit"];?></h4></td>

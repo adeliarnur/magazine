@@ -69,7 +69,7 @@
 			// move_uploaded_file($tmp_file, $dir_image);
 
 
-			$sql = "UPDATE `tabel_penyakit` SET `Nama`='".$judul."' ,  `Keterangan`='".$desk."', `Gambar`='".$dir_image."' WHERE id = '".$id."'";
+			$sql = "UPDATE `desease` SET `Nama`='".$judul."' ,  `Keterangan`='".$desk."', `Gambar`='".$dir_image."' WHERE id = '".$id."'";
 
 
 			if($conn->query($sql)){
@@ -103,7 +103,7 @@
 
 			$id = $_POST['id'];
 
-			$sql = "UPDATE `tabel_penyakit` SET `Nama`='".$judul."' ,  `Keterangan`='".$desk."' WHERE id = '".$id."' ";
+			$sql = "UPDATE `desease` SET `Nama`='".$judul."' ,  `Keterangan`='".$desk."' WHERE id = '".$id."' ";
 
 			if($conn->query($sql)){
 				?>

@@ -43,7 +43,7 @@ if($_POST['nama']){
 		echo $desk;
 		move_uploaded_file($tmp_file, $dir_image);
 
-		$sql = "INSERT INTO `tabel_penyakit`(`Nama`, `Keterangan`, `Gambar`) VALUES ('".$judul."','".$desk."','".$dir_image."')";
+		$sql = "INSERT INTO `desease`(`Nama`, `Keterangan`, `Gambar`) VALUES ('".$judul."','".$desk."','".$dir_image."')";
 
 		if($connection->query($sql)){
 			?>
