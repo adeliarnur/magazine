@@ -64,7 +64,7 @@
 									  <tr bgcolor="F6214B" style="color: white">
 									  	<th><center>Lokasi</center></th>
 									    <th><center>Nama Makanan</center></th>
-									    <th><center>Jumlah</center></th> 
+									    <th><center>Penanggung jawab</center></th> 
 									    <th><center>Kelebihan</center></th>
 									    <th><center>Kekurangan</center></th>
 									  </tr>
@@ -85,7 +85,7 @@
 									  <tr>
 									  	<td><?php echo $row['lokasi']; ?></td>
 									    <td><?php echo $row['nama_makanan']; ?></td>
-									    <td><?php echo $row['jumlah']; ?></td> 
+									    <td><?php echo $row['penanggung_jawab']; ?></td> 
 									    <td><?php echo $row['kelebihan']; ?></td>
 									    <td><?php echo $row['kekurangan']; ?></td>
 									  </tr>
