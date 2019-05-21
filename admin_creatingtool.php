@@ -329,7 +329,7 @@ echo "Connected successfully";
 													<div style="width: 100%; text-align: center;">
 														<form action="Admin_CreatingTool_Delete_action.php" method="POST">
 
-															<input type="text" name="id_CT" value="<?php echo $row['id_CT'] ?>">
+															<input type="text" name="id_CT" value="<?php echo $row['id_CT'] ?>" hidden>
 															
 															<button type="SUBMIT" class="btn btn-danger"> TETAP HAPUS</button>
 															<button class="btn btn-warning">CANCEL</button>	
