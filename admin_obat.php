@@ -1,7 +1,7 @@
 <!-- list icon : https://mdbootstrap.com/docs/jquery/content/icons-list/ -->
 <?php include 'koneksi.php'; 
-$quert = "SELECT * FROM `drug` WHERE 1";
-$result =  mysqli_query($connection,$quert);
+$query = "SELECT * FROM `drug` ";
+$result =  mysqli_query($connection,$query);
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ $result =  mysqli_query($connection,$quert);
 			border-radius: 50%;
 			color:white;
 		}
-		.search_icon:focus{
+/*		.search_icon:focus{
 			outline:none;
 		}
 		.text_input{
@@ -93,6 +93,26 @@ $result =  mysqli_query($connection,$quert);
 		}
 		.text_input:focus{
 			outline: none;
+		}
+*/
+.search_icon:focus{
+			outline:none;
+		}
+		.text_input{
+			width: 100%;
+			/*border-radius: 20px;*/	
+			outline: none;
+			padding-left: 10px;
+		}
+		.text_input:focus{
+			border: 3px solid #555;
+			border-color: rgb(91,192,222);
+		}
+		.label_text{
+			text-align: left;
+			margin-top: 10px;
+			font-weight: 400;
+			color: black;
 		}
 
 
@@ -187,12 +207,7 @@ $result =  mysqli_query($connection,$quert);
 						<button class="btn btn-primary" data-toggle="modal" data-target="#modal_add_obat"><i class="fas fa-plus-circle"></i>     TAMBAH OBAT</button>
 					</div>
 				</div>
-				<div class="col-sm-4" style="text-align: right;">
-					<form class="searchbar">
-						<input type="text" name="search_input" class="search_input" placeholder="Search...">
-						<button class="search_icon" style="border-color: grey;"><i class="fas fa-search"></i></button>
-					</form>
-				</div>
+				<!-- m -->
 			</div>
 
 
@@ -204,14 +219,15 @@ $result =  mysqli_query($connection,$quert);
 						<th scope="col">JUDUL</th>
 						<th scope="col">KETERANGAN</th>
 						<th scope="col" style="text-align: center;">FOTO</th>
-						<th scope="col" colspan="2" style="text-align: center;">HANDEL</th>
+						<th scope="col" style="text-align: center;">-</th>
+						<th scope="col" style="text-align: center;">-</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
 					if(mysqli_num_rows($result)>0){
 						$no =1;
-						while ($data = mysqli_fetch_array($query)) {
+						while ($data = mysqli_fetch_array($result)) {
 							?>
 							<tr>
 								<td style="text-align: center;"><?php echo $no ?></td>
@@ -221,37 +237,38 @@ $result =  mysqli_query($connection,$quert);
 								<td style="text-align: center;">
 									<a href="Admin_Obat_Delete_action.php? id=<?php echo $data['id']; ?>"><button type="button"  class="btn btn-danger">DELETE</button></a>
 								</td>
-								<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update<?php echo $row['id'] ?>" class="btn btn-primary">UPDATE</button></td>
+								<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update<?php echo $data['id'] ?>" class="btn btn-primary">UPDATE</button>
+								</td>
 
 
 								<!-- UPDATE Obat -->
 
 
-								<div class="modal fade" id="modal_update<?php echo $row['id'] ?>" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								<div class="modal fade" id="modal_update<?php echo $data['id'] ?>" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
 										<div class="modal-content" style="text-align: right;">
 
 											<!-- Modal Header -->
 											<div class="modal-header" style="text-align: center;">
-												<h4 class="modal-title" >UPDATE SECTION (<?php echo $row['judul_obat']; ?>)</h4>
-												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title" >UPDATE SECTION (<?php echo $data['judul_obat']; ?>)</h4>
+												<button type="button" class="close" data-dismiss="modal ">&times;</button>
 											</div>
 
 											<!-- Modal body -->
 											<div class="modal-body">
-												<form action="Admin_CreatingTool_Update_action.php" enctype="multipart/form-data" method="POST" >
-													<input type="text" name="id_CT" value="<?php echo $row['id'] ?>" hidden>
+												<form action="Admin_Obat_Update_action.php" enctype="multipart/form-data" method="POST" >
+													<input type="text" name="id" value="<?php echo $data['id'] ?>" hidden>
 													<div class="label_text">JUDUL</div>
-													<input type="text" name="judul" placeholder="Judul Creating Tool" class="text_input" value="<?php echo $row['judul_obat'] ?>" required>
+													<input type="text" name="nama" placeholder="Judul Creating Tool" class="text_input" value="<?php echo $data['judul_obat'] ?>" required>
 													<!-- <div class="label_text">BAHAN*</div> -->
 													<!-- <input type="text" name="bahan" placeholder="Bahan 1, Bahan 2, Bahan 3" class="text_input" value="<?php echo $row['bahan_CT'] ?>" required> -->
 													<!-- <div class="label_text">ALAT*</div> -->
 													<!-- <input type="text" name="alat" placeholder="Alat 1, Alat 2, Alat 3" class="text_input" value="<?php echo $row['alat_CT'] ?>" required> -->
 													<div class="label_text">DESKRIPSI*</div>
-													<textarea name="description" placeholder="Description" required class="text_input" rows="6"><?php echo $row['deskr'] ?></textarea>
+													<textarea name="keterangan" placeholder="Description" required class="text_input" rows="6"><?php echo $data['deskr'] ?></textarea>
 													<div class="label_text">GAMBAR*</div>
 													<div style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
-														<img src="<?php echo $row['dir_img_obat'] ?>" style="width: 180px; text-align: left;">
+														<img src="<?php echo $data['dir_img_obat'] ?>" style="width: 180px; text-align: left;">
 													</div>
 													<input type="file" name="gambar" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
 
@@ -400,40 +417,46 @@ $result =  mysqli_query($connection,$quert);
 					</div>
 
 					<!-- Modal body -->
-					<div class="modal-body">
-						<div class="row" style="margin-top: 10px;">
-							<div class="col col-sm-4" style=" padding-top: 5px;">NAMA</div>
-							<div class="col col-md-8"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;"></div>
-						</div>
-						<div class="row"style="margin-top: 10px;">
-							<div class="col col-sm-4" style=" padding-top: 5px;">BENTUK</div>
-							<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-						</div>
-						<div class="row"style="margin-top: 10px; " >
-							<div class="col col-sm-4"  style=" padding-top: 5px;">WARNA</div>
-							<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-						</div>										
-						<div class="row"style="margin-top: 10px;"  style=" padding-top: 5px;">
-							<div class="col col-sm-4" style=" padding-top: 5px;">CARA MAKAN</div>
-							<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-						</div>
-						<div class="row"style="margin-top: 10px;">
-							<div class="col col-sm-4" style=" padding-top: 5px;">KETERANGAN</div>
-							<div class="col col-md-8"><input type="text" name="" class="text_input"></div>
-						</div>
-						<div class="row"style="margin-top: 10px;">
-							<div class="col col-sm-4" style=" padding-top: 5px;">FOTO</div>
-							<input type="file" id="file-with-current" class="input-default-js">
+					<div class="modal-body" style="text-align: right;">
+						<!-- <div class="row" style="margin-top: 10px;"> -->
+							<form action="Admin_Obat_Add_action.php" enctype="multipart/form-data" method="POST" >
+							<div class="label_text" style=" padding-top: 5px;">NAMA</div>
+							<div class="text"><input type="text" name="judul" class="text_input" style="text-transform: uppercase;" placeholder="Masukan Nama" ></div>
+						<!-- </div> -->
+						<!-- <div class="row"style="margin-top: 10px;"> -->
+							<!-- <div class="col col-sm-4" style=" padding-top: 5px;">BENTUK</div> -->
+							<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+						<!-- </div> -->
+						<!-- <div class="row"style="margin-top: 10px; " > -->
+							<!-- <div class="col col-sm-4"  style=" padding-top: 5px;">WARNA</div> -->
+							<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+						<!-- </div>										 -->
+						<!-- <div class="row"style="margin-top: 10px;"  style=" padding-top: 5px;"> -->
+							<!-- <div class="col col-sm-4" style=" padding-top: 5px;">CARA MAKAN</div> -->
+							<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+						<!-- </div> -->
+						<!-- <div class="row"style="margin-top: 10px;"> -->
+							<div class="label_text" style=" padding-top: 5px;">KETERANGAN</div>
+							<textarea type="text" name="keterangan" placeholder="Masukkan Keterangan Obat" class="text_input" required></textarea>
+							<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
+						<!-- </div> -->
+						<!-- <div class="row"style="margin-top: 10px;"> -->
+							<div class="label_text" style=" padding-top: 5px;">GAMBAR</div>
+							<!-- <input type="file" id="file-with-current" class="input-default-js"> -->
+							<input type="file" name="gambar" value="Upload" style="width: 100%;" accept="image/x-png,image/gif,image/jpeg">
 
 							<!-- <div class="col col-md-8"><input type="text" name="" class="text_input"></div> -->
-						</div>
+						<!-- </div> -->
+						<button type="SUBMIT" class="btn btn-primary" style="margin-top: 20px;"><i class="fas fa-plus-circle"></i>       CONFRIM</button>
+								<button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top: 20px; text-align: center;">Close</button>
+							</form>
 					</div>
 
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       KONFRIM</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+						<!-- <button type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i>       KONFRIM</button> -->
+						<!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
 					</div>
 
 				</div>
