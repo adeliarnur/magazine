@@ -233,7 +233,7 @@ $result =  mysqli_query($connection,$query);
 								<td style="text-align: center;"><?php echo $no ?></td>
 								<td><?php echo $data["judul_obat"];?></td>
 								<td><?php echo $data["deskr"];?></td>
-								<td style="text-align: center;"><img src="<?php echo $data["dir_img_obat"];?>" style="width: 40px;height: 40px;"></td>
+								<td style="text-align: center;"><img src="<?php echo $data["dir_img_obat"];?>" style="width: 290px;height: 200px;"></td>
 								<td style="text-align: center;">
 									<a href="Admin_Obat_Delete_action.php? id=<?php echo $data['id']; ?>"><button type="button"  class="btn btn-danger">DELETE</button></a>
 								</td>
@@ -293,9 +293,10 @@ $result =  mysqli_query($connection,$query);
 								
 							</tr>
 
-							<?php
+							<?php $no++; 
 						}
 					}
+
 					?>
 				</tbody>
 			</table>

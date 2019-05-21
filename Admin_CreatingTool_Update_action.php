@@ -52,7 +52,7 @@
 		if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 
 			// if($ukuran_file < 1044070){	
-			$id = $_POST['id_CT'];		
+			$id = $_POST['id'];		
 
 			$dir_image = 'img/CT/'.$nama_file;
 
@@ -88,6 +88,7 @@
 				// echo 'UKURAN FILE TERLALU BESAR';
 			// }
 		}else{
+			$id = $_POST['id'];
 
 			$judul = $_POST['judul'];
 

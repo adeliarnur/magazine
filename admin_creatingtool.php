@@ -255,7 +255,7 @@ echo "Connected successfully";
 									<td><?php echo $row['bahan_CT'] ;?></td>
 									<td><?php echo $row['alat_CT'] ;?></td>
 									<td><?php echo $row['deskr'] ;?></td>
-									<td><img src="<?php echo $row['dir_img_CT'] ?>" style="width: 40px; height: 40px;" ></td>
+									<td><img src="<?php echo $row['dir_img_CT'] ?>" style="width: 290px; height: 200px;" ></td>
 									<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_delete<?php echo $row['id_CT'] ?>" class="btn btn-danger">DELETE</button></td>
 									<td style="text-align: center;"><button type="button" data-toggle="modal" data-target="#modal_update<?php echo $row['id_CT'] ?>" class="btn btn-primary">UPDATE</button></td>
 
@@ -276,7 +276,7 @@ echo "Connected successfully";
 												<!-- Modal body -->
 												<div class="modal-body">
 													<form action="Admin_CreatingTool_Update_action.php" enctype="multipart/form-data" method="POST" >
-														<input type="text" name="id_CT" value="<?php echo $row['id_CT'] ?>" hidden>
+														<input type="text" name="id" value="<?php echo $row['id_CT'] ?>" hidden>
 														<div class="label_text">JUDUL</div>
 														<input type="text" name="judul" placeholder="Judul Creating Tool" class="text_input" value="<?php echo $row['judul_CT'] ?>" required>
 														<div class="label_text">BAHAN*</div>
@@ -353,7 +353,7 @@ echo "Connected successfully";
 
 									<!-- END DELETE CT -->
 								</tr>
-								<?php
+								<?php 
 							}
 						}
 						?>
