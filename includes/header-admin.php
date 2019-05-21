@@ -94,7 +94,7 @@
 							<li class="menu-has-children"><a href="#">Info Bencana</a>
 							<ul>
 								<li><a href="StorageBahanMakan.html">Storage Bahan Makanan</a></li>
-								<li><a href="StatusKeadaanBencana.html">Status Keadaan Bencana</a></li>
+								<li><a href="AdminStatusBencana.php">Status Keadaan Bencana</a></li>
 							</li>
 					</ul>
 							<li><a href="kontak.html">Kontak</a></li>
