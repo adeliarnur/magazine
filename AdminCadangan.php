@@ -61,7 +61,7 @@
 
 										$lokasi = $hasil['lokasi'];
 										$namaMakanan = $hasil['nama_makanan'];
-										$jumlah = $hasil['jumlah'];
+										$penanggung_jawab = $hasil['penanggung_jawab'];
 										$kelebihan = $hasil['kelebihan'];
 										$kekurangan = $hasil['kekurangan'];
 
@@ -74,29 +74,29 @@
 
 											<div class="form-group col-lg-6 col-md-12 lokasi">
 												<input type="text" class="form-control"
-												value="<?php echo $lokasi; ?>" placeholder="Masukkan Lokasi" name="lokasi">
+												value="<?php echo $lokasi; ?>" placeholder="Masukkan Lokasi" name="lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 nama_makanan">
 												<input type="text" class="form-control"
-												value="<?php echo $namaMakanan; ?>" placeholder="Masukkan Nama Makanan" name="nama_makanan">
+												value="<?php echo $namaMakanan; ?>" placeholder="Masukkan Nama Makanan" name="nama_makanan" required oninvalid="this.setCustomValidity('Nama Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 
 										<div class="form-group form-inline">
-											<div class="form-group col-lg-6 col-md-12 jumlah">
+											<div class="form-group col-lg-6 col-md-12 penanggung_jawab">
 												<input type="text" class="form-control"
-												value="<?php echo $jumlah; ?>" placeholder="Masukkan Jumlah" name="jumlah">
+												value="<?php echo $penanggung_jawab; ?>" placeholder="Masukkan penanggung_jawab" name="penanggung_jawab" required oninvalid="this.setCustomValidity('penanggung_jawab Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 Cluster">
 												<input type="text" class="form-control"
-												value="<?php echo $kelebihan; ?>" placeholder="Masukkan Kelebihan" name="kelebihan">
+												value="<?php echo $kelebihan; ?>" placeholder="Masukkan Kelebihan" name="kelebihan" required oninvalid="this.setCustomValidity('penanggung_jawab Kelebihan Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 											<div class="form-group col-lg-6 col-md-12 Kota">
 												<input type="text" class="form-control"
-												value="<?php echo $kekurangan; ?>" placeholder="Masukkan Kekurangan" name="kekurangan">
+												value="<?php echo $kekurangan; ?>" placeholder="Masukkan Kekurangan" name="kekurangan" required oninvalid="this.setCustomValidity('penanggung_jawab Kekurangan Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										<button type="submit" name="update" class="primary-btn text-uppercase">Post</button>
 									</form>
@@ -112,29 +112,29 @@
 										<div class="form-group form-inline">
 											<div class="form-group col-lg-6 col-md-12 lokasi">
 												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Lokasi" name="lokasi">
+												value="" placeholder="Masukkan Lokasi" name="lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 nama_makanan">
 												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Nama Makanan" name="nama_makanan">
+												value="" placeholder="Masukkan Nama Makanan" name="nama_makanan"  required oninvalid="this.setCustomValidity('Nama Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 
 										<div class="form-group form-inline">
-											<div class="form-group col-lg-6 col-md-12 jumlah">
+											<div class="form-group col-lg-6 col-md-12 penanggung_jawab">
 												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Jumlah" name="jumlah">
+												value="" placeholder="Masukkan penanggung_jawab" name="penanggung_jawab" required oninvalid="this.setCustomValidity('penanggung_jawab Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 kelebihan">
 												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Kelebihan" name="kelebihan">
+												value="" placeholder="Masukkan Kelebihan" name="kelebihan" required oninvalid="this.setCustomValidity('penanggung_jawab Kelebihan Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 											<div class="form-group col-lg-6 col-md-12 kekurangan">
 												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Kekurangan" name="kekurangan">
+												value="" placeholder="Masukkan Kekurangan" name="kekurangan" required oninvalid="this.setCustomValidity('penanggung_jawab Kekurangan Makanan Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										<button type="submit" name="save" class="primary-btn text-uppercase">Post</button>
 									</form>
@@ -159,7 +159,7 @@
 									  <tr bgcolor="F6214B" style="color: white">
 									  	<th><center>Lokasi</center></th>
 									    <th><center>Nama Makanan</center></th>
-									    <th><center>Jumlah</center></th>
+									    <th><center>penanggung_jawab</center></th>
 									    <th><center>Kelebihan</center></th>
 									    <th><center>Kekurangan</center></th>
 									    <th colspan="2"><center>status</center></th>
@@ -180,7 +180,7 @@
 									  <tr>
 									  	<td><?php echo $row['lokasi']; ?></td>
 									    <td><?php echo $row['nama_makanan']; ?></td>
-									    <td><?php echo $row['jumlah']; ?></td>
+									    <td><?php echo $row['penanggung_jawab']; ?></td>
 									    <td><?php echo $row['kelebihan']; ?></td>
 									    <td><?php echo $row['kekurangan']; ?></td>
 									    <td><a href="AdminCadangan.php?edit=<?php echo $row['id_makanan']; ?>" class="btn btn-success">Edit</a></td>
