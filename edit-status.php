@@ -23,7 +23,7 @@ if (count($_POST) > 0){
 				VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
 
 
-		$stmt = $db->prepare($sql) or die("Gagal mengecek user di database");
+		$stmt = $db->prepare($sql) or die("Gagal mengecek data lokasi  di database");
 		// $stmt->bind_param("ssis", $lokasi, $tanggal, $status, $keterangan, $makanan);
 
 		if ($stmt->execute() === FALSE) {
