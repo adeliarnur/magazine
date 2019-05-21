@@ -146,9 +146,9 @@ $query = $connection->query("SELECT * FROM `desease`");
 					<?php if($query->num_rows>0){ ?>
 						<?php while($data =$query->fetch_array()){ ?>
 							<tr>
-								<td><img src="<?php echo $data["dir_img_penyakit"];?>"style="width: 290px;height: 200px;"></td>
-								<td><h4><?php echo $data["judul_penyakit"];?></h4></td>
-								<td><?php echo $data["deskr"];?></td>
+								<td><img src="<?php echo $data["Gambar"];?>"style="width: 290px;height: 200px;"></td>
+								<td><h4><?php echo $data["Nama"];?></h4></td>
+								<td><?php echo $data["Keterangan"];?></td>
 							</tr>
 						<?php } ?>
 				    <?php } ?>

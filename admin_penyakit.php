@@ -18,7 +18,7 @@ else{
 	echo "Connected successfully";
 }
 
-$query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
+$query = mysqli_query($conn,"SELECT * FROM desease ORDER BY id DESC");
 ?>
 <head>
 	<!-- Mobile Specific Meta -->
@@ -237,7 +237,7 @@ $query = mysqli_query($conn,"SELECT * FROM tabel_penyakit ORDER BY id DESC");
 										<td style="text-align: center;"><?php echo $no ?></td>
 										<td><?php echo $data["Nama"];?></td>
 										<td><?php echo $data["Keterangan"];?></td>
-										<td style="text-align: center;"><img src="<?php echo $data["Gambar"];?>" style="width: 40px;height: 40px;"></td>
+										<td style="text-align: center;"><img src="<?php echo $data["Gambar"];?>" style="width: 290px;height: 200px;"></td>
 
 										<td style="text-align: center;">
 											<a href="Admin_Penyakit_Delete_action.php? id=<?php echo $data['id']; ?>"><button type="button"  class="btn btn-danger">DELETE</button></a>
