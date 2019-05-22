@@ -68,35 +68,35 @@
 										?>
 									<form action="proseskontak.php" method="POST">
 										<input type="text" class="form-control" 
-											    value="<?php echo $_GET['edit']; ?>" hidden="hidden" placeholder="masukkan nama" name="id">
+											    value="<?php echo $_GET['edit']; ?>" hidden="hidden" placeholder="masukkan nama" name="id" required oninvalid="this.setCustomValidity('Nama Belum Diisi')" oninput="setCustomValidity('')">
 
 										<div class="form-group form-inline">
 
 											<div class="form-group col-lg-6 col-md-12 NamaKontak">
 												<input type="text" class="form-control" 
-												value="<?php echo $nama; ?>" placeholder="Masukkan Nama Kontak" name="nama">
+												value="<?php echo $nama; ?>" placeholder="Masukkan Nama Kontak" name="nama" required oninvalid="this.setCustomValidity('Nama Kontak Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 NomorKontak">
 												<input type="text" class="form-control" 
-												value="<?php echo $nomor; ?>" placeholder="Masukkan Nomor Kontak" name="nomor">
+												value="<?php echo $nomor; ?>" placeholder="Masukkan Nomor Kontak" name="nomor" required oninvalid="this.setCustomValidity('Nomor Kontak Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 
 										<div class="form-group form-inline">
 											<div class="form-group col-lg-6 col-md-12 Lembaga">
 												<input type="text" class="form-control" 
-												value="<?php echo $lembaga; ?>" placeholder="Masukkan Lembaga" name="lembaga">
+												value="<?php echo $lembaga; ?>" placeholder="Masukkan Lembaga" name="lembaga" required oninvalid="this.setCustomValidity('Lembaga Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 Cluster">
 												<input type="text" class="form-control" 
-												value="<?php echo $cluster; ?>" placeholder="Masukkan Cluster" name="cluster">
+												value="<?php echo $cluster; ?>" placeholder="Masukkan Cluster" name="cluster" required oninvalid="this.setCustomValidity('Cluster Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 											<div class="form-group col-lg-6 col-md-12 Kota">
 												<input type="text" class="form-control" 
-												value="<?php echo $kota; ?>" placeholder="Masukkan Kota" name="kota">
+												value="<?php echo $kota; ?>" placeholder="Masukkan Kota" name="kota" required oninvalid="this.setCustomValidity('Kota Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										<button type="submit" name="update" class="primary-btn text-uppercase">Post</button>
 									</form>
@@ -107,34 +107,34 @@
 
 									<form action="proseskontak.php" method="POST">
 										<input type="text" class="form-control" 
-											    value="" hidden="hidden" placeholder="masukkan nama" name="id">
+											    value="" hidden="hidden" placeholder="masukkan nama" name="id" required oninvalid="this.setCustomValidity('Nama Belum Diisi')" oninput="setCustomValidity('')">
 
 										<div class="form-group form-inline">
 											<div class="form-group col-lg-6 col-md-12 NamaKontak">
 												<input type="text" class="form-control" 
-												value="" placeholder="Masukkan Nama Kontak" name="nama">
+												value="" placeholder="Masukkan Nama Kontak" name="nama" required oninvalid="this.setCustomValidity('Nama Kontak Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 NomorKontak">
 												<input type="text" class="form-control" 
-												value="" placeholder="Masukkan Nomor Kontak" name="nomor">
+												value="" placeholder="Masukkan Nomor Kontak" name="nomor" required oninvalid="this.setCustomValidity('Nomor Kontak Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 
 										<div class="form-group form-inline">
 											<div class="form-group col-lg-6 col-md-12 Lembaga">
 												<input type="text" class="form-control" 
-												value="" placeholder="Masukkan Lembaga" name="lembaga">
+												value="" placeholder="Masukkan Lembaga" name="lembaga" required oninvalid="this.setCustomValidity('Lembaga Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 Cluster">
 												<input type="text" class="form-control" 
-												value="" placeholder="Masukkan Cluster" name="cluster">
+												value="" placeholder="Masukkan Cluster" name="cluster" required oninvalid="this.setCustomValidity('Cluster Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										</div>
 											<div class="form-group col-lg-6 col-md-12 Kota">
 												<input type="text" class="form-control" 
-												value="" placeholder="Masukkan Kota" name="kota">
+												value="" placeholder="Masukkan Kota" name="kota" required oninvalid="this.setCustomValidity('Kota Belum Diisi')" oninput="setCustomValidity('')">
 											</div>
 										<button type="submit" name="save" class="primary-btn text-uppercase">Post</button>
 									</form>
