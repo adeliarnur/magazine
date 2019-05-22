@@ -55,11 +55,12 @@
 										if(isset($_GET['edit'])){
 
 										$mysqli = new mysqli('localhost','root','','psi') or die(mysql_error($mysqli));
-										$res=mysqli_query($mysqli,"SELECT * FROM Makanan WHERE id_makanan='".$_GET['edit']."'");
+										$res=mysqli_query($mysqli,"SELECT makanan.id_makanan, lokasi.nama, makanan.id_lokasi, makanan.nama_makanan, makanan.penanggung_jawab, makanan.kelebihan, makanan.kekurangan FROM makanan, lokasi WHERE makanan.id_lokasi = lokasi.ID_lokasi AND id_makanan='".$_GET['edit']."'");
 										$hasil=mysqli_fetch_assoc($res);
 
 
-										$lokasi = $hasil['lokasi'];
+										$id_lokasi = $hasil['id_lokasi'];
+										$nama = $hasil['nama'];
 										$namaMakanan = $hasil['nama_makanan'];
 										$penanggung_jawab = $hasil['penanggung_jawab'];
 										$kelebihan = $hasil['kelebihan'];
@@ -73,8 +74,22 @@
 										<div class="form-group form-inline">
 
 											<div class="form-group col-lg-6 col-md-12 lokasi">
-												<input type="text" class="form-control"
-												value="<?php echo $lokasi; ?>" placeholder="Masukkan Lokasi" name="lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
+												<!-- <input type="text" class="form-control"
+												value="<?php// echo $id_lokasi; ?>" placeholder="Masukkan Lokasi" name="id_lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
+ -->
+												<select name="id_lokasi" value="<?php echo $id_lokasi; ?>">
+													<?php
+													$result=mysqli_query($con,"SELECT * FROM lokasi");
+													foreach ($result as $row) {
+														//echo '<option value="'.$row['ID_lokasi'].'">'.$row['nama'].'</option>';
+														 echo '<option value="'.$row['ID_lokasi'].'" ';
+														 if($id_lokasi==$row['ID_lokasi']){
+															echo "selected";
+														 	}
+														 	echo '>'.$row['nama'].'</option>';
+													}
+												?>
+												</select>
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 nama_makanan">
@@ -111,8 +126,17 @@
 
 										<div class="form-group form-inline">
 											<div class="form-group col-lg-6 col-md-12 lokasi">
-												<input type="text" class="form-control"
-												value="" placeholder="Masukkan Lokasi" name="lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
+												<!-- <input type="text" class="form-control"
+												value="" placeholder="Masukkan Lokasi" name="id_lokasi" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
+ -->
+												<select name="id_lokasi" value="<?php echo $id_lokasi; ?>">
+													<?php
+													$result=mysqli_query($con,"SELECT * FROM lokasi");
+													foreach ($result as $row) {
+														echo '<option value="'.$row['ID_lokasi'].'"> '.$row['nama'].'</option>';
+													}
+												?>
+												</select>
 											</div>
 
 											<div class="form-group col-lg-6 col-md-12 nama_makanan">
@@ -146,7 +170,7 @@
 								<br>
 									<form action="" method="GET">
 										<div class="input-group mb-3">
-											<input type="text" class="form-control" placeholder="Cari Berdasarkan Lokasi" name="lokasi" aria-label="lokasi"aria-describedby="basic-addon2">
+											<input type="text" class="form-control" placeholder="Cari Berdasarkan lokasi" name="lokasi" aria-label="lokasi"aria-describedby="basic-addon2">
 										<div class="input-group-append">
 											<button type="submit" class="btn btn-primary" name="cari">Cari</button>
 										</div>
@@ -168,17 +192,17 @@
 													$mysqli = new mysqli('localhost', 'root', '', 'psi') or die(mysql_error($mysqli));
 
 													if(isset($_GET['cari'])){
-														$cari = $_GET['nama_makanan'];
-														$data = $mysqli->query("SELECT * FROM makanan WHERE nama_makanan like '%".$cari."%'");
+														$cari = $_GET['lokasi'];
+														$data = $mysqli->query("SELECT  makanan.id_makanan, lokasi.nama, makanan.nama_makanan, makanan.penanggung_jawab, makanan.kelebihan, makanan.kekurangan FROM makanan, lokasi WHERE makanan.id_lokasi = lokasi.ID_lokasi AND nama like '%".$cari."%'");
 													}else{
 														//$mysqli = new mysqli('localhost', 'root', '', 'psi') or die(mysql_error($mysqli));
-														$data = $mysqli->query("SELECT * FROM makanan ORDER BY nama_makanan ASC");
+														$data = $mysqli->query("SELECT  makanan.id_makanan, lokasi.nama, makanan.nama_makanan, makanan.penanggung_jawab, makanan.kelebihan, makanan.kekurangan FROM makanan, lokasi WHERE makanan.id_lokasi = lokasi.ID_lokasi ORDER BY nama ASC");
 														}
 														?>
 
 									  				<?php while ($row = $data->fetch_assoc()): ?>
 									  <tr>
-									  	<td><?php echo $row['lokasi']; ?></td>
+									  	<td><?php echo $row['nama']; ?></td>
 									    <td><?php echo $row['nama_makanan']; ?></td>
 									    <td><?php echo $row['penanggung_jawab']; ?></td>
 									    <td><?php echo $row['kelebihan']; ?></td>
