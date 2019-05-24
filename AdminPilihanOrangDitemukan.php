@@ -94,7 +94,7 @@
 
 										<div class="form-group form-inline">
 											<select name="stat" value="<?php echo $status; ?>">
-												<option value="Hilang" <?php if($status=="1"){echo "selected";} ?> >Hilang</option>
+												<option value="Ditemukan" <?php if($status=="1"){echo "selected";} ?> >Ditemukan</option>
 												<option value="Ditemukan" <?php if($status=="2"){echo "selected";} ?> >Ditemukan</option>
 											</select>
 										</div>
@@ -136,7 +136,7 @@
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="<?php echo $alamat; ?>" class="form-control" placeholder="Alamat Terakhir" name="alamat" required oninvalid="this.setCustomValidity('Alamat Terakhir Belum Diisi')" oninput="setCustomValidity('')">
+											value="<?php echo $alamat; ?>" class="form-control" placeholder="Alamat Ditemukan" name="alamat" required oninvalid="this.setCustomValidity('Alamat Ditemukan Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
 
 										<div class="form-group form-inline">
@@ -145,7 +145,7 @@
 										</div>
 										<div class="form-group">
 											<textarea class="form-control mb-10" 
-											rows="5" placeholder="Deskripsi Orang Hilang" required oninvalid="this.setCustomValidity('Deskripsi Belum Diisi')" oninput="setCustomValidity('')" onblur="this.placeholder = 'Deskripsi Orang Hilang'" name="deskripsi"><?php echo $deskrip; ?></textarea>
+											rows="5" placeholder="Deskripsi Orang Ditemukan" required oninvalid="this.setCustomValidity('Deskripsi Belum Diisi')" oninput="setCustomValidity('')" onblur="this.placeholder = 'Deskripsi Orang Ditemukan'" name="deskripsi"><?php echo $deskrip; ?></textarea>
 										</div>
 										<button type="submit" class="primary-btn text-uppercase" name="update">Post</button>
 									</form>
@@ -215,7 +215,7 @@
 
 										<div class="form-group form-inline">
 											<input type="text" 
-											value="" class="form-control" required oninvalid="this.setCustomValidity('Alamat Terakhir Belum Diisi')" oninput="setCustomValidity('')" placeholder="Alamat Terakhir" name="alamat">
+											value="" class="form-control" required oninvalid="this.setCustomValidity('Alamat Ditemukan Belum Diisi')" oninput="setCustomValidity('')" placeholder="Alamat Ditemukan" name="alamat">
 										</div>
 
 										<div class="form-group form-inline">
@@ -226,7 +226,7 @@
 
 										<div class="form-group">
 											<textarea class="form-control mb-10" 
-											value="" rows="5" placeholder="Deskripsi Orang Hilang" required oninvalid="this.setCustomValidity('Deskripsi Belum Diisi')" oninput="setCustomValidity('')" onblur="this.placeholder = 'Deskripsi Orang Hilang'" name="deskripsi"></textarea>
+											value="" rows="5" placeholder="Deskripsi Orang Ditemukan" required oninvalid="this.setCustomValidity('Deskripsi Belum Diisi')" oninput="setCustomValidity('')" onblur="this.placeholder = 'Deskripsi Orang Ditemukan'" name="deskripsi"></textarea>
 										</div>
 
 										<button type="submit" class="primary-btn text-uppercase" name="save">Post</button>
@@ -240,7 +240,7 @@
 								<br>
 								<form action="" method="GET">
 									<div class="input-group mb-3">
-										<input type="text" class="form-control" placeholder="Cari Orang" name="namaOrang" aria-label="Orang Hilang" aria-describedby="basic-addon2">
+										<input type="text" class="form-control" placeholder="Cari Orang" name="namaOrang" aria-label="Orang Ditemukan" aria-describedby="basic-addon2">
 											<div class="input-group-append">
 												<button type="submit" class="btn btn-primary" name="cari">Cari</button>
 											</div>
@@ -304,7 +304,7 @@
 															    <th style="padding-right: 100px"><?php echo $row['TempatLahir']; ?></th>
 												  			</tr>
 												  			<tr>
-															    <th style="padding-right: 40px">Alamat terakhir</th>
+															    <th style="padding-right: 40px">Alamat Ditemukan</th>
 															    <th><?php echo $row['AlamatAkhir']; ?></th>
 												  			</tr>
 												  			<tr>

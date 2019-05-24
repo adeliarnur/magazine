@@ -118,7 +118,7 @@
 															    <th style="padding-right: 100px"><?php echo $row['TempatLahir']; ?></th>
 												  			</tr>
 												  			<tr>
-															    <th style="padding-right: 40px">Alamat terakhir</th>
+															    <th style="padding-right: 40px">Alamat Ditemukan</th>
 															    <th><?php echo $row['AlamatAkhir']; ?></th>
 												  			</tr>
 												  			<tr>
