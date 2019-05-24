@@ -24,17 +24,11 @@ if (isset($_POST['save'])){
 	{
 		$query = "INSERT INTO kontak (nama_kontak, no_kontak, lembaga, cluster, nama_kota) VALUES('$nama', '$nomor', '$lembaga', '$cluster', '$kota')";
 		$result = mysqli_query($mysqli, $query) OR die(mysqli_error($mysqli));
-		exit();
-
+		echo "<script>alert('Data Berhasil Disimpan'); </script>";
+   		echo "<script>window.location='Adminkontak.php';</script>";
+		
 	}
 
-
-	// $mysqli->query("INSERT INTO kontak (nama_kontak, no_kontak, lembaga, cluster, nama_kota) VALUES('$nama', '$nomor', '$lembaga', '$cluster', '$kota')") or die($mysqli->error);
-
-	// $_SESSION['message'] = "Data Disimpan!";
-	// $_SESSION['msg_type'] = "Sukses";
-
-	header("location: Adminkontak.php");
 }
 ////////////////////////////////////////////////////////////////////////Update data orang
 if (isset($_POST['update'])){
@@ -48,9 +42,8 @@ if (isset($_POST['update'])){
 
 	$mysqli->query("UPDATE kontak SET nama_kontak = '$nama', nama_kota = '$kota', lembaga = '$lembaga', cluster = '$cluster', no_kontak = '$nomor' WHERE id_kontak ='$id'") or die($mysqli->error);
 
-	$_SESSION['message'] = "Data Disimpan!";
-	$_SESSION['msg_type'] = "Sukses";	
-	header("location: Adminkontak.php");
+	echo "<script>alert('Data Berhasil Diupdate'); </script>";
+    echo "<script>window.location='Adminkontak.php';</script>";
 }
 
 //////////////////////////////////////////////////////////////////////Delete data orang
@@ -59,10 +52,8 @@ if (isset($_GET['delete'])){
 	$id = $_GET['delete'];
 	$mysqli->query("DELETE FROM kontak WHERE id_kontak=$id") or die($mysqli->error());
 
-	$_SESSION['message'] = "Data Dihapus!";
-	$_SESSION['msg_type'] = "bahaya";
-
-	header("location: Adminkontak.php");
+	echo "<script>alert('Data Berhasil Dihapus'); </script>";
+    echo "<script>window.location='Adminkontak.php';</script>";
 
 }
 ////////////////////////////////////////////////////////////////////Read data orang ketika update di form
