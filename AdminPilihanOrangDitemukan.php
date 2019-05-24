@@ -83,7 +83,7 @@
 										?>
 
 <!-- //////////////////////////////////////////////////////////////update data -->
-								<form action="proses.php" method="POST">						
+								<form action="prosesOrgDitemukan.php" method="POST">						
 										<input type="text" class="form-control" 
 											    value="<?php echo $_GET['edit']; ?>" hidden="hidden" placeholder="masukkan nama" name="id" >
 										
@@ -159,7 +159,7 @@
 
 <!-- ///////////////////////////////////////////////////////////////////////////save data -->
 
-										<form action="proses.php" method="POST">
+										<form action="prosesOrgDitemukan.php" method="POST">
 										<div class="form-group form-inline">
 											<input type="text" class="form-control" value="" placeholder="masukkan nama" name="nama" required oninvalid="this.setCustomValidity('Nama Belum Diisi')" oninput="setCustomValidity('')">
 										</div>
@@ -334,8 +334,8 @@
 												</tr>
 												<tr>
 													<th>
-														<a href="AdminPilihanOrangHilang.php?edit=<?php echo $row['ID_Orang']; ?>" class="btn btn-success">Edit</a>
-														<a href="proses.php?delete=<?php echo $row['ID_Orang']; ?>" class="btn btn-danger">Delete</a>
+														<a href="AdminPilihanOrangDitemukan.php?edit=<?php echo $row['ID_Orang']; ?>" class="btn btn-success">Edit</a>
+														<a href="prosesOrgDitemukan.php?delete=<?php echo $row['ID_Orang']; ?>" class="btn btn-danger">Delete</a>
 													</th>
 												</tr>
 
