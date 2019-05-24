@@ -264,7 +264,7 @@
 															}else{
 																//$mysqli = new mysqli('localhost', 'root', '', 'psi') or die(mysql_error($mysqli));
 ////////////////////////////////////////////////////////////////////massukkan id orangnya
-																$data = $mysqli->query("SELECT dataorang.ID_Orang, dataorang.Nama, penilaian.nilai_status, dataorang.NamaAyah, dataorang.NamaIbu, dataorang.Gender, dataorang.Usia, dataorang.TempatLahir, dataorang.AlamatAkhir, dataorang.Kewarganegaraan, dataorang.Deskripsi, dataorang.Tanggal FROM dataorang INNER JOIN penilaian WHERE dataorang.nilai = penilaian.id_nilai AND status ='1'");
+																$data = $mysqli->query("SELECT dataorang.ID_Orang, dataorang.Nama, penilaian.nilai_status, dataorang.NamaAyah, dataorang.NamaIbu, dataorang.Gender, dataorang.Usia, dataorang.TempatLahir, dataorang.AlamatAkhir, dataorang.Kewarganegaraan, dataorang.Deskripsi, dataorang.Tanggal FROM dataorang INNER JOIN penilaian WHERE dataorang.nilai = penilaian.id_nilai AND status ='2'");
 																}
 																?>
 
