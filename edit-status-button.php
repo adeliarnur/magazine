@@ -1,21 +1,23 @@
 <?php
 include "includes/db_connection.php";
 $id = $_GET['id'];
-$lokasi = $_POST['lokasi'] or die("Gagal mengecek lokasi di database");
+
 
 $tanggal = $_POST['tanggal'];
-
+echo $tanggal;
 $status = $_POST['status'];
 
 
 $keterangan = $_POST['keterangan'];
 
-$makanan = $_POST['id_makanan'];
+$posko = $_POST['id_lokasi'];
+$lokasi = $_POST['lokasi'] or die("Gagal mengecek lokasi di database");
+
 
 
 $sql = "UPDATE status_bencana
-        SET lokasi_bencana='".$lokasi."', tanggal_bencana='".$tanggal."', status_bencana='".$status."', keterangan_bencana='".$keterangan."', id_makanan='".$makanan."'
-    WHERE id_status_bencana= '".$id."'";
+        SET lokasi_bencana='".$lokasi."', tanggal_bencana='".$tanggal."', status_bencana='".$status."', keterangan_bencana='".$keterangan."', id_lokasi='".$posko."'
+        WHERE id_status_bencana= '".$id."'";
 
 
 

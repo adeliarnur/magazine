@@ -44,13 +44,7 @@ function tambahCSS() {
 	<?php
 }
 
-$sqlview = "SELECT makanan.lokasi as posko, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana FROM status_bencana JOIN makanan ON status_bencana.id_makanan=makanan.id_makanan";
-$view = $db->query($sqlview);
-// if ()) {
-//     // $view = $view->fetch_array();
-//     // print_r($kategori['kategori']);
-//     // die();
-// }
+
 
 include "includes/header-admin.php";
 ?>
@@ -68,17 +62,19 @@ include "includes/header-admin.php";
 				<th width="100px"><center>Tanggal</center></th>
 				<th><center>Keterangan</center></th>
 				<th><center>Posko</center></th>
-
 			</tr>
-
-			<?php	while ($result = $view->fetch_array()) { ?>
+			<?php
+			$sqlview = "SELECT lokasi.id_lokasi, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana, lokasi.nama FROM status_bencana INNER JOIN lokasi ON status_bencana.id_lokasi=lokasi.id_lokasi";
+			$view = $db->query($sqlview);
+				while ($result = $view->fetch_array()) { ?>
 				<tr>
 
 				<td><?php echo $result[1];?></td>
 				<td><?php echo $result[2];?></td>
 				<td><?php echo $result[3];?></td>
 				<td><?php echo $result[4];?></td>
-				<td><?php echo $result[0];?></td>
+				<td><button type="button" class="btn btn-success"><a style="color : white" href="CadanganMakananPosko.php? id=<?php echo $result[0]; ?> " target="_blank"><?php echo $result[6];?></button></td>
+
 
 					</tr>
 	<?php	}			?>

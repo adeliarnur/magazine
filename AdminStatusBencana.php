@@ -2,37 +2,7 @@
 
 include "includes/db_connection.php";
 
-// if (count($_POST) > 0){
-// 	try {
-// 		$lokasi = $_POST['lokasi'] or die("Gagal mengecek lokasi di database");
-//
-// 		$tanggal = $_POST['tanggal'];
-//
-// 		$status = $_POST['status'];
-//
-//
-// 		$keterangan = $_POST['keterangan'];
-//
-// 		$makanan = $_POST['id_makanan'];
-//
-//
-// 		$sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_makanan)
-// 				VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
-//
-//
-// 		$stmt = $db->prepare($sql) or die("Gagal mengecek user di database");
-// 		// $stmt->bind_param("ssis", $lokasi, $tanggal, $status, $keterangan, $makanan);
-//
-// 		if ($stmt->execute() === FALSE) {
-// 			echo "Error: " . $sql . "<br>" . $db->error;
-// 			die();
-// 		}
-// 	} catch(Exception $e){
-// 		echo "gagal mengupload berita. error : " . $e->error;
-// 		die();
-// 	}
-// 	$db->close();
-// }
+
 ?>
 
 
@@ -51,15 +21,7 @@ function tambahJS() {
 			});
 		});
 		$('#konten-baru').submit(function(){
-			// $.ajax({
-			// 	method: "POST",
-			// 	url: "AdminMinimalisirDampakBencana.php",
-			// 	data: { name: "John", location: "Boston" }
-			// })
-			// .done(function( msg ) {
-			// 	alert( "Data Saved: " + msg );
-			// });
-			// alert('hello');
+
 			var konten = $("#summernote").summernote('code');
 			$("#summernote_keterangan").val(keterangan);
 			return true;
@@ -74,13 +36,7 @@ function tambahCSS() {
 	<?php
 }
 
-$sqlview = "SELECT makanan.lokasi as posko, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana FROM status_bencana JOIN makanan ON status_bencana.id_makanan=makanan.id_makanan";
-$view = $db->query($sqlview);
-// if ()) {
-//     // $view = $view->fetch_array();
-//     // print_r($kategori['kategori']);
-//     // die();
-// }
+
 
 include "includes/header-admin.php";
 ?>
@@ -112,12 +68,12 @@ include "includes/header-admin.php";
 
 				<div class="form-group">
 					<label for="inputStatus">Posko</label>
-					<select class="form-control" id="inputPosko" name="id_makanan">
+					<select class="form-control" id="inputPosko" name="id_lokasi">
 						<?php
-						$sqlposko = "SELECT id_makanan, lokasi FROM makanan";
+						$sqlposko = "SELECT id_lokasi, nama, provinsi, kecamatan, desa FROM lokasi";
 						if ($queryposko = $db->query($sqlposko)) {}
 						while ($posko = $queryposko->fetch_array()) { ?>
-						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?></option>
+						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?>, <?php echo $posko[4];?>, <?php echo $posko[3];?>, <?php echo $posko[2];?></option>
 							<?php	}			?>
 					</select>
 				</div>
@@ -141,15 +97,17 @@ include "includes/header-admin.php";
 				<th><center>Posko</center></th>
 				<th><center>Edit</center></th>
 			</tr>
-
-			<?php	while ($result = $view->fetch_array()) { ?>
+			<?php
+			$sqlview = "SELECT lokasi.id_lokasi, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana, lokasi.nama FROM status_bencana INNER JOIN lokasi ON status_bencana.id_lokasi=lokasi.id_lokasi";
+			$view = $db->query($sqlview);
+				while ($result = $view->fetch_array()) { ?>
 				<tr>
 
 				<td><?php echo $result[1];?></td>
 				<td><?php echo $result[2];?></td>
 				<td><?php echo $result[3];?></td>
 				<td><?php echo $result[4];?></td>
-				<td><?php echo $result[0];?></td>
+				<td><?php echo $result[6];?></td>
 				<td><button type="button" class="btn btn-danger"><a style="color : white" href="hapus-status.php? id=<?php echo $result[5]; ?>">Delete</a>
 					</button>
 

@@ -16,10 +16,10 @@ if (count($_POST) > 0){
 
 		$keterangan = $_POST['keterangan'];
 
-		$makanan = $_POST['id_makanan'];
+		$posko = $_POST['id_lokasi'];
 
 
-		$sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_makanan)
+		$sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_lokasi)
 				VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
 
 
@@ -93,12 +93,12 @@ include "includes/header-admin.php";
 		<form id="konten-baru" method="post" action="edit-status-button.php? id=<?php echo $id; ?>">
 			<div class="form-group">
 				<label for="inputJudul">Tanggal</label>
-				<input type="text" class="form-control" id="inputTanggal" name="tanggal" placeholder="<?php echo $view[2];?>">
+				<input type="text" class="form-control" id="inputTanggal" name="tanggal" placeholder="<?php echo $view[3];?>">
 				</div>
 
 				<div class="form-group">
 					<label for="inputJudul">Lokasi</label>
-					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="<?php echo $view[1];?>">
+					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="<?php echo $view[2];?>">
 					</div>
 
 				<div class="form-group">
@@ -114,19 +114,19 @@ include "includes/header-admin.php";
 
 				<div class="form-group">
 					<label for="inputStatus">Posko</label>
-					<select class="form-control" id="inputPosko" name="id_makanan" placeholder="<?php echo $view[3];?>">
+					<select class="form-control" id="inputPosko" name="id_lokasi" placeholder="<?php echo $view[3];?>">
 						<?php
-						$sqlposko = "SELECT id_makanan, lokasi FROM makanan";
+						$sqlposko = "SELECT id_lokasi, nama, provinsi, kecamatan, desa FROM lokasi";
 						if ($queryposko = $db->query($sqlposko)) {}
 						while ($posko = $queryposko->fetch_array()) { ?>
-						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?></option>
+						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?>, <?php echo $posko[4];?>, <?php echo $posko[3];?>, <?php echo $posko[2];?></option>
 							<?php	}			?>
 					</select>
 				</div>
 
 				<div class="form-group">
 					<label for="inputJudul">Keterangan</label>
-					<input type="text" class="form-control" id="inputKeterangan" name="keterangan" placeholder="<?php echo $view[4];?>">
+					<input type="text" class="form-control" id="inputKeterangan" name="keterangan" placeholder="<?php echo $view[5];?>">
 					</div>
 
 

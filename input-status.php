@@ -9,11 +9,11 @@ $status = $_POST['status'];
 
 $keterangan = $_POST['keterangan'];
 
-$makanan = $_POST['id_makanan'];
+$posko = $_POST['id_lokasi'];
 
 
-$sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_makanan)
-    VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
+$sql = "INSERT INTO status_bencana (lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_lokasi)
+    VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$posko."')";
 
 
 $stmt = $db->prepare($sql) or die("Gagal input status bencana di database");
