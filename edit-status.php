@@ -1,6 +1,6 @@
 <?php
+require('konek.php');
 
-include "includes/db_connection.php";
 $id = $_GET['id'];
 ?>
 
@@ -23,18 +23,18 @@ if (count($_POST) > 0){
 				VALUES ('".$lokasi."', '".$tanggal."', '".$status."', '".$keterangan."','".$makanan."')";
 
 
-		$stmt = $db->prepare($sql) or die("Gagal mengecek data lokasi  di database");
+		$stmt = $con->prepare($sql) or die("Gagal mengecek data lokasi  di database");
 		// $stmt->bind_param("ssis", $lokasi, $tanggal, $status, $keterangan, $makanan);
 
 		if ($stmt->execute() === FALSE) {
-			echo "Error: " . $sql . "<br>" . $db->error;
+			echo "Error: " . $sql . "<br>" . $con->error;
 			die();
 		}
 	} catch(Exception $e){
 		echo "gagal mengupload berita. error : " . $e->error;
 		die();
 	}
-	$db->close();
+	$con->close();
 } ?>
 
 
@@ -76,7 +76,7 @@ function tambahCSS() {
 	<?php
 }
 
-$queryedit=mysqli_query($db,"SELECT * FROM status_bencana WHERE id_status_bencana='$id'")or die("Gagal delete");
+$queryedit=mysqli_query($con,"SELECT * FROM status_bencana WHERE id_status_bencana='$id'")or die("Gagal delete");
 $view = $queryedit->fetch_array();
 // if ()) {
 //     // $view = $view->fetch_array();
@@ -117,7 +117,7 @@ include "includes/header-admin.php";
 					<select class="form-control" id="inputPosko" name="id_lokasi" placeholder="<?php echo $view[3];?>">
 						<?php
 						$sqlposko = "SELECT id_lokasi, nama, provinsi, kecamatan, desa FROM lokasi";
-						if ($queryposko = $db->query($sqlposko)) {}
+						if ($queryposko = $con->query($sqlposko)) {}
 						while ($posko = $queryposko->fetch_array()) { ?>
 						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?>, <?php echo $posko[4];?>, <?php echo $posko[3];?>, <?php echo $posko[2];?></option>
 							<?php	}			?>

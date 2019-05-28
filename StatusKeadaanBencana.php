@@ -1,6 +1,6 @@
 <?php
 
-include "includes/db_connection.php";
+require('konek.php');
 
 
 ?>
@@ -65,7 +65,7 @@ include "includes/header-admin.php";
 			</tr>
 			<?php
 			$sqlview = "SELECT lokasi.id_lokasi, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana, lokasi.nama FROM status_bencana INNER JOIN lokasi ON status_bencana.id_lokasi=lokasi.id_lokasi";
-			$view = $db->query($sqlview);
+			$view = $con->query($sqlview);
 				while ($result = $view->fetch_array()) { ?>
 				<tr>
 

@@ -1,7 +1,7 @@
 <?php
 
 include "includes/db_connection.php";
-
+require('konek.php');
 
 ?>
 
@@ -47,17 +47,17 @@ include "includes/header-admin.php";
 		<form id="konten-baru" action="input-status.php " enctype="multi" method="post">
 			<div class="form-group" >
 				<label for="inputJudul">Tanggal</label>
-				<input type="text" class="form-control" id="inputTanggal" name="tanggal" placeholder="Masukkan Tanggal dengan Format YYYY-MM-DD">
+				<input type="date"  class="form-control" id="inputTanggal" name="tanggal" placeholder="Masukkan Tanggal dengan Format YYYY-MM-DD" required oninvalid="this.setCustomValidity('Tanggal Belum Diisi')" oninput="setCustomValidity('')">
 				</div>
 
 				<div class="form-group">
 					<label for="inputJudul">Lokasi</label>
-					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="Masukkan lokasi bencana">
+					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="Masukkan lokasi bencana" required oninvalid="this.setCustomValidity('Lokasi Belum Diisi')" oninput="setCustomValidity('')">
 					</div>
 
 				<div class="form-group" action="input-status.php " enctype="multi" method="post">
 					<label for="inputStatus">Status</label>
-					<select class="form-control" id="inputStatus" name="status">
+					<select class="form-control" id="inputStatus" name="status" required>
 						<option value="Kritis">Kritis</option>
 						<option value="Siaga 1">Siaga 1</option>
 						<option value="Siaga 2">Siaga 2</option>
@@ -68,10 +68,10 @@ include "includes/header-admin.php";
 
 				<div class="form-group">
 					<label for="inputStatus">Posko</label>
-					<select class="form-control" id="inputPosko" name="id_lokasi">
+					<select class="form-control" id="inputPosko" name="id_lokasi" required>
 						<?php
 						$sqlposko = "SELECT id_lokasi, nama, provinsi, kecamatan, desa FROM lokasi";
-						if ($queryposko = $db->query($sqlposko)) {}
+						if ($queryposko = $con->query($sqlposko)) {}
 						while ($posko = $queryposko->fetch_array()) { ?>
 						<option value="<?php echo $posko[0];?>"><?php echo $posko[1];?>, <?php echo $posko[4];?>, <?php echo $posko[3];?>, <?php echo $posko[2];?></option>
 							<?php	}			?>
@@ -80,7 +80,7 @@ include "includes/header-admin.php";
 
 				<div class="form-group">
 					<label for="inputJudul">Keterangan</label>
-					<input type="text" class="form-control" id="inputKeterangan" name="keterangan" placeholder="Masukkan keterangan">
+					<input type="text"  class="form-control" id="inputKeterangan" name="keterangan" placeholder="Masukkan keterangan" required oninvalid="this.setCustomValidity('Keterangan Belum Diisi')" oninput="setCustomValidity('')">
 					</div>
 
 
@@ -99,7 +99,7 @@ include "includes/header-admin.php";
 			</tr>
 			<?php
 			$sqlview = "SELECT lokasi.id_lokasi, lokasi_bencana, tanggal_bencana, status_bencana, keterangan_bencana, id_status_bencana, lokasi.nama FROM status_bencana INNER JOIN lokasi ON status_bencana.id_lokasi=lokasi.id_lokasi";
-			$view = $db->query($sqlview);
+			$view = $con->query($sqlview);
 				while ($result = $view->fetch_array()) { ?>
 				<tr>
 
