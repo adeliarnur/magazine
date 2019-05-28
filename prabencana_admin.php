@@ -3,7 +3,7 @@ include "includes/db_connection.php";
 global $kontenObj, $id_kategori;
 // echo empty($_FILES['thumbnail']['name'])?"tak ada":"ada";
 // die();
-if ($_GET['edit']) {
+if (isset($_GET['edit'])) {
 	$id_kategori = intval($_GET['edit']);
 	$sql = "SELECT * FROM `pra-bencana_konten`
 					WHERE id=$id_kategori";
