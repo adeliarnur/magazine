@@ -70,9 +70,9 @@
 						<ul class="nav-menu">
 							<li class="menu-active"><a href="index.html">Beranda</a></li>
 
-							<li class="menu-has-children"><a href="">Materi</a>
+							<li class="menu-has-children"><a href="#">Materi</a>
 								<ul>
-									<li class="menu-has-children"><a href="">Pra Bencana</a>
+									<li class="menu-has-children"><a href="#">Pra Bencana</a>
 										<ul>
 											<li><a href="prabencana.php?kategori=1">Persiapan Diri</a></li>
 											<li><a href="prabencana.php?kategori=2">Persiapan Didalam Rumah</a></li>
@@ -89,7 +89,7 @@
 								</ul>
 							</li>
 
-							<li><a href="">Cari Orang</a>
+							<li><a href="#">Cari Orang</a>
 								<ul>
 									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
 									<li><a href="PilihanOrangDitemukan.html">Orang Ditemukan</a></li>
@@ -97,7 +97,7 @@
 							</li>
 
 
-							<li class="menu-has-children"><a href="">Info Bencana</a>
+							<li class="menu-has-children"><a href="#">Info Bencana</a>
 							<ul>
 								<li><a href="StorageBahanMakan.html">Storage Bahan Makanan</a></li>
 								<li><a href="StatusKeadaanBencana.html">Status Keadaan Bencana</a></li>

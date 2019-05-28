@@ -61,7 +61,7 @@ include "includes/header.php";
 									<div class="col-lg-3 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/PersiapanDiri.png" alt="">
+											<img class="img-fluid" src="<?php echo $row['thumbnail']; ?>" alt="img/PersiapanDiri.png">
 										</div>
 									</div>
 									<div class="col-lg-9 post-right">
@@ -79,7 +79,6 @@ include "includes/header.php";
                         <?php
                         }
                         $result->close();
-                        die();
                         ?>
 
 						</div>
