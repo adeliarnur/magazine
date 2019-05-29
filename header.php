@@ -54,7 +54,7 @@
 				<div class="container">
 					<div class="row justify-content-between align-items-center">
 						<div class="col-lg-2 col-md-2 col-sm-10 logo-left no-padding">
-							<a href="./">
+							<a href="index.html">
 								<img class="img-fluid" src="img/BMKG.png" alt="">
 							</a>
 						</div>
@@ -68,11 +68,17 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="./">Beranda</a></li>
+							<li class="menu-active"><a href="index.html">Beranda</a></li>
 
-							<li class="menu-has-children"><a href="#">Materi</a>
+							<li class="menu-has-children"><a href="">Materi</a>
 								<ul>
-									<li class="menu-has-children"><a href="AdminMinimalisirDampakBencana.php">Pra Bencana</a></li>
+									<li class="menu-has-children"><a href="">Pra Bencana</a>
+										<ul>
+											<li><a href="prabencana.php?kategori=1">Persiapan Diri</a></li>
+											<li><a href="prabencana.php?kategori=2">Persiapan Didalam Rumah</a></li>
+											<li><a href="prabencana.php?kategori=3">Persiapan Diluar Rumah</a></li>
+										</ul>
+									</li>
 									<li><a href="#">Survival</a>
 										<ul>
 											<li><a href="PilihanSurvivalCT.html">Creating tools</a></li>
@@ -83,7 +89,7 @@
 								</ul>
 							</li>
 
-							<li><a href="#">Cari Orang</a>
+							<li><a href="">Cari Orang</a>
 								<ul>
 									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
 									<li><a href="PilihanOrangDitemukan.html">Orang Ditemukan</a></li>
@@ -91,10 +97,10 @@
 							</li>
 
 
-							<li class="menu-has-children"><a href="#">Info Bencana</a>
+							<li class="menu-has-children"><a href="">Info Bencana</a>
 							<ul>
 								<li><a href="StorageBahanMakan.html">Storage Bahan Makanan</a></li>
-								<li><a href="AdminStatusBencana.php">Status Keadaan Bencana</a></li>
+								<li><a href="StatusKeadaanBencana.html">Status Keadaan Bencana</a></li>
 							</li>
 					</ul>
 							<li><a href="kontak.html">Kontak</a></li>
