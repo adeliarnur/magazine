@@ -92,18 +92,18 @@
 							<li><a href="">Cari Orang</a>
 								<ul>
 									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
-									<li><a href="PilihanOrangDitemukan.html">Orang Ditemukan</a></li>
+									<li><a href="PilihanOrangDitemukan.php">Orang Ditemukan</a></li>
 								</ul>
 							</li>
 
 
 							<li class="menu-has-children"><a href="">Info Bencana</a>
 							<ul>
-								<li><a href="StorageBahanMakan.html">Storage Bahan Makanan</a></li>
+								<li><a href="CadanganMakanan.php">Storage Bahan Makanan</a></li>
 								<li><a href="StatusKeadaanBencana.php">Status Keadaan Bencana</a></li>
 							</li>
 					</ul>
-							<li><a href="kontak.html">Kontak</a></li>
+							<li><a href="kontak.php">Kontak</a></li>
 					</nav>
 				</div>
 			</div>
