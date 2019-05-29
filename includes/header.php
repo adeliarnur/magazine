@@ -68,7 +68,7 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="index.html">Beranda</a></li>
+							<li class="menu-active"><a href="index.php">Beranda</a></li>
 
 							<li class="menu-has-children"><a href="">Materi</a>
 								<ul>
@@ -81,9 +81,9 @@
 									</li>
 									<li><a href="#">Survival</a>
 										<ul>
-											<li><a href="PilihanSurvivalCT.html">Creating tools</a></li>
-											<li><a href="PilihanSurvivalPenyakit.html">Penyakit</a></li>
-											<li><a href="PilihanSurvivalObat.html">Obat</a></li>
+											<li><a href="PilihanSurvivalCT.php">Creating tools</a></li>
+											<li><a href="PilihanSurvivalPenyakit.php">Penyakit</a></li>
+											<li><a href="PilihanSurvivalObat.php">Obat</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -91,8 +91,10 @@
 
 							<li><a href="">Cari Orang</a>
 								<ul>
-									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
+									<li><a href="PilihanOrangHilang.php">Orang Hilang</a></li>
 									<li><a href="PilihanOrangDitemukan.php">Orang Ditemukan</a></li>
+									<li><a href="TambahOrangHilang.php">Tambah Data Orang</a></li>
+									<li><a href="LaporanOrang.php">Laporan Orang</a></li>
 								</ul>
 							</li>
 

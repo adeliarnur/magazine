@@ -1,0 +1,49 @@
+include "includes/header-admin.php";
+include "includes/header.php";
+include "includes/footer.php";
+
+HalamanDepan
+index
+AdminIndex (semua fitur)
+AdminIndexLSM (semua fitur kecuali pra bencana, pasca bencana dan tambah admin )
+
+Tambah AKUN
+Adminadmin
+
+Pra bencana
+.prabencana
+.prabencana_admin
+.prabencana_konten
+
+pasca bencana
+.admin_creatingtool
+.admin_obat
+.admin_penyakit
+.PilihanSurvivalCT
+.PilihanSurvivalObat
+.PilihanSurvivalPenyakit
+
+orang hilang
+.adminPilihanOrangHilang
+.pilihanOrangHilang
+.adminlaporan
+.LaporanOrang
+.TambahOrangHilang
+
+orang ditemukan
+.adminPilihanOrangDitemukan
+.pilihanOrangDitemukan
+
+status bencana
+.adminStatusBencana
+.StatusKeadaanBencana
+
+makanan
+.adminCadangan
+.adminlokasi
+.cadanganMakanan
+.CadanganMakananPosko
+
+kontak
+.adminkontak
+.kontak

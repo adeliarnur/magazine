@@ -1,12 +1,12 @@
 <?php
-include "includes/header.php";
+include "includes/header-admin.php";
  ?>
  <div class="site-main-container">
  			<!-- Start top-post Area -->
  						<div class="col-lg-12">
  							<div class="hero-nav-area">
  								<h1 class="text-white">Pusat Informasi Bencana</h1>
- 								<p class="text-white link-nav"><a href="index.html">SELAMAT DATANG</a></p>
+ 								<p class="text-white link-nav"><a href="index.html">SELAMAT DATANG ADMIN </a></p>
  							</div>
  						</div>
 

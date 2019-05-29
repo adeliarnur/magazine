@@ -68,16 +68,16 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="./">Beranda</a></li>
+							<li class="menu-active"><a href="AdminIndex.php">Beranda</a></li>
 
 							<li class="menu-has-children"><a href="#">Materi</a>
 								<ul>
-									<li class="menu-has-children"><a href="AdminMinimalisirDampakBencana.php">Pra Bencana</a></li>
+									<li class="menu-has-children"><a href="prabencana_admin.php">Pra Bencana</a></li>
 									<li><a href="#">Survival</a>
 										<ul>
-											<li><a href="PilihanSurvivalCT.html">Creating tools</a></li>
-											<li><a href="PilihanSurvivalPenyakit.html">Penyakit</a></li>
-											<li><a href="PilihanSurvivalObat.html">Obat</a></li>
+											<li><a href="admin_creatingtool.php">Creating tools</a></li>
+											<li><a href="admin_penyakit.php">Penyakit</a></li>
+											<li><a href="admin_obat.php">Obat</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -85,8 +85,9 @@
 
 							<li><a href="#">Cari Orang</a>
 								<ul>
-									<li><a href="PilihanOrangHilang.html">Orang Hilang</a></li>
+									<li><a href="AdminPilihanOrangHilang.php">Orang Hilang</a></li>
 									<li><a href="AdminPilihanOrangDitemukan.php">Orang Ditemukan</a></li>
+									<li><a href="AdminLaporan.php">Laporan Orang</a></li>
 								</ul>
 							</li>
 
@@ -99,6 +100,7 @@
 							</li>
 					</ul>
 							<li><a href="Adminkontak.php">Kontak</a></li>
+							<li><a href="AdminTambahAkun.php">Tambah Akun</a></li>
 					</nav>
 				</div>
 			</div>

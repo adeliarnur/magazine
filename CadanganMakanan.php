@@ -38,7 +38,7 @@
 	</head>
 	<body>
 		<header>
-			<?php include 'header.php'; ?>
+			<?php include "includes/header.php"; ?>
 		</header>
 		
 			<section class="latest-post-area pb-120">

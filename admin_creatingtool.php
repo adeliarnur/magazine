@@ -126,73 +126,7 @@ echo "Connected successfully";
 </head>
 <body>
 	<header>	
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
-						<ul>
-						</ul>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
-						<ul>
-							<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>ADMINISTRATOR</span></a></li>
-							<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>BMKG@gmail.com</span></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="logo-wrap">
-			<div class="container">
-				<div class="row justify-content-between align-items-center">
-					<div class="col-lg-2 col-md-2 col-sm-10 logo-left no-padding">
-						<a href="index.html">
-							<img class="img-fluid" src="img/BMKG.png" alt="">
-						</a>
-					</div>
-					<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-						<img class="img-fluid" src="img/Artboard.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container main-menu" id="main-menu">
-			<div class="row align-items-center justify-content-between">
-				<nav id="nav-menu-container">
-					<ul class="nav-menu">
-						<li class="menu-active"><a href="admin.html">Home</a></li>
-
-						<li class="menu-has-children"><a href="">Materi</a>
-							<ul>
-								<li><a href="AdminMinimalisirDampakBencana.html">Pra Bencana</a></li>
-								<li><a href="#">Survival</a>
-									<ul>
-										<li><a href="admin_creatingtool.html">Creating tools</a></li>
-										<li><a href="admin_penyakit.html">Penyakit</a></li>
-										<li><a href="admin_obat.html">Obat</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-
-						<li><a href="">Cari Orang</a>
-							<ul>
-								<li><a href="AdminPilihanOrangHilang.html">Orang Hilang</a></li>
-								<li><a href="AdminPilihanOrangDitemukan.html">Orang Ditemukan</a></li>
-							</ul>
-						</li>
-
-
-						<li class="menu-has-children"><a href="">Info Bencana</a>
-							<ul>
-								<li><a href="AdminCadangan.html">Storage Bahan Makanan</a></li>
-								<li><a href="AdminStatusKeadaanBencana.html">Status Keadaan Bencana</a></li>
-							</li>
-						</ul>
-						<li><a href="Adminkontak.html">Kontak</a></li>
-					</nav>
-				</div>
-			</div>
+		<?php include "includes/header-admin.php"; ?>
 		</header>
 
 
@@ -441,74 +375,9 @@ echo "Connected successfully";
 
 			<!-- KONTAIN END -->
 			<!-- FOOTHER -->
+			<?php include "includes/footer.php"; ?>
 
-
-			<footer class="footer-area section-gap">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-3 col-md-6 single-footer-widget">
-							<h4>Top Products</h4>
-							<ul>
-								<li><a href="#">Managed Website</a></li>
-								<li><a href="#">Manage Reputation</a></li>
-								<li><a href="#">Power Tools</a></li>
-								<li><a href="#">Marketing Service</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2 col-md-6 single-footer-widget">
-							<h4>Quick Links</h4>
-							<ul>
-								<li><a href="#">Jobs</a></li>
-								<li><a href="#">Brand Assets</a></li>
-								<li><a href="#">Investor Relations</a></li>
-								<li><a href="#">Terms of Service</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2 col-md-6 single-footer-widget">
-							<h4>Features</h4>
-							<ul>
-								<li><a href="#">Jobs</a></li>
-								<li><a href="#">Brand Assets</a></li>
-								<li><a href="#">Investor Relations</a></li>
-								<li><a href="#">Terms of Service</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-2 col-md-6 single-footer-widget">
-							<h4>Resources</h4>
-							<ul>
-								<li><a href="#">Guides</a></li>
-								<li><a href="#">Research</a></li>
-								<li><a href="#">Experts</a></li>
-								<li><a href="#">Agencies</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-3 col-md-6 single-footer-widget">
-							<h4>Instragram Feed</h4>
-							<ul class="instafeed d-flex flex-wrap">
-								<li><img src="img/i1.jpg" alt=""></li>
-								<li><img src="img/i2.jpg" alt=""></li>
-								<li><img src="img/i3.jpg" alt=""></li>
-								<li><img src="img/i4.jpg" alt=""></li>
-								<li><img src="img/i5.jpg" alt=""></li>
-								<li><img src="img/i6.jpg" alt=""></li>
-								<li><img src="img/i7.jpg" alt=""></li>
-								<li><img src="img/i8.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
-					<div class="footer-bottom row align-items-center">
-						<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-							<div class="col-lg-4 col-md-12 footer-social">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-dribbble"></i></a>
-								<a href="#"><i class="fa fa-behance"></i></a>
-							</div>
-						</div>
-					</div>
-				</footer>
+			
 				<!-- End footer Area -->
 				<script src="js/vendor/jquery-2.2.4.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
