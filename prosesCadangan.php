@@ -28,14 +28,6 @@ if (isset($_POST['save'])){
 		echo "<script>window.location='AdminCadangan.php';</script>";
 
 	}
-
-
-	// $mysqli->query("INSERT INTO kontak (nama_kontak, no_kontak, lembaga, cluster, nama_kota) VALUES('$nama', '$nomor', '$lembaga', '$cluster', '$kota')") or die($mysqli->error);
-
-	// $_SESSION['message'] = "Data Disimpan!";
-	// $_SESSION['msg_type'] = "Sukses";
-
-	// header("location: AdminCadangan.php");
 }
 ////////////////////////////////////////////////////////////////////////Update data orang
 if (isset($_POST['update'])){

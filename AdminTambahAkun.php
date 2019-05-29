@@ -55,7 +55,7 @@
 										if(isset($_GET['edit'])){
 
 										$mysqli = new mysqli('localhost','root','','psi') or die(mysql_error($mysqli));
-										$res=mysqli_query($mysqli,"SELECT users.id, users.role, users.username, users.password, users_role.nama FROM users INNER JOIN users_role WHERE users.role = users_role.id AND id='".$_GET['edit']."'");
+										$res=mysqli_query($mysqli,"SELECT users.id, users.role, users.username, users.password, users_role.nama FROM users INNER JOIN users_role WHERE users.role = users_role.id AND users.id = '".$_GET['edit']."'");
 										$hasil=mysqli_fetch_assoc($res);
 
 										$id = $hasil['id'];
@@ -106,7 +106,7 @@
 									<?php }
 									else{ ?>
 
-									<form action="prosesLokasi.php" method="POST">
+									<form action="prosesAdmin.php" method="POST">
 										<input type="text" class="form-control"
 											    value="" hidden="hidden" placeholder="masukkan nama" name="id">
 
