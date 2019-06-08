@@ -1,8 +1,9 @@
 <?php
 include "includes/db_connection.php";
+include_once 'includes/authentication.php';
+id_role_harus([1]);
+
 global $kontenObj, $id_kategori;
-// echo empty($_FILES['thumbnail']['name'])?"tak ada":"ada";
-// die();
 if (isset($_GET['edit'])) {
 	$id_kategori = intval($_GET['edit']);
 	$sql = "SELECT * FROM `pra-bencana_konten`

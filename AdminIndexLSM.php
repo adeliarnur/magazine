@@ -1,4 +1,7 @@
 <?php
+include_once 'includes/authentication.php';
+id_role_harus([1, 2]);
+
 include "includes/header-admin.php";
  ?>
  <div class="site-main-container">
