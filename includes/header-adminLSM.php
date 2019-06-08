@@ -70,38 +70,10 @@
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
 							<li class="menu-active"><a href="AdminIndex.php">Beranda</a></li>
-
-							<li class="menu-has-children"><a href="#">Materi</a>
-								<ul>
-									<li class="menu-has-children"><a href="prabencana_admin.php">Pra Bencana</a></li>
-									<li><a href="#">Survival</a>
-										<ul>
-											<li><a href="admin_creatingtool.php">Creating tools</a></li>
-											<li><a href="admin_penyakit.php">Penyakit</a></li>
-											<li><a href="admin_obat.php">Obat</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-
-							<li><a href="#">Cari Orang</a>
-								<ul>
-									<li><a href="AdminPilihanOrangHilang.php">Orang Hilang</a></li>
-									<li><a href="AdminPilihanOrangDitemukan.php">Orang Ditemukan</a></li>
-									<li><a href="AdminLaporan.php">Laporan Orang</a></li>
-								</ul>
-							</li>
-
-
-							<li class="menu-has-children"><a href="#">Info Bencana</a>
-							<ul>
-								<li><a href="AdminCadangan.php">Storage Bahan Makanan</a></li>
-								<li><a href="AdminStatusBencana.php">Status Keadaan Bencana</a></li>
-								<li><a href="AdminLokasi.php">Lokasi Bencana</a></li>
-							</li>
-					</ul>
-							<li><a href="Adminkontak.php">Kontak</a></li>
-							<li><a href="AdminTambahAkun.php">Tambah Akun</a></li>
+							<li class="menu-active"><a href="AdminCadangan.php">Storage Bahan Makanan</a></li>
+							<li class="menu-active"><a href="AdminStatusBencana.php">Status Keadaan Bencana</a></li>
+							<li class="menu-active"><a href="AdminLokasi.php">Lokasi Bencana</a></li>
+						</ul>
 					</nav>
 				</div>
 			</div>
