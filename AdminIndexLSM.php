@@ -1,6 +1,6 @@
 <?php
 include_once 'includes/authentication.php';
-id_role_harus([1,2]);
+id_role_harus([2]);
 
 include "includes/header-adminLSM.php";
  ?>

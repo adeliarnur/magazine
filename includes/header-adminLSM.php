@@ -69,10 +69,10 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="AdminIndex.php">Beranda</a></li>
-							<li class="menu-active"><a href="AdminCadangan.php">Storage Bahan Makanan</a></li>
-							<li class="menu-active"><a href="AdminStatusBencana.php">Status Keadaan Bencana</a></li>
-							<li class="menu-active"><a href="AdminLokasi.php">Lokasi Bencana</a></li>
+							<li class="menu-active"><a href="AdminIndexLSM.php">Beranda</a></li>
+							<li class="menu-active"><a href="AdminCadanganLSM.php">Storage Bahan Makanan</a></li>
+							<li class="menu-active"><a href="AdminStatusBencanaLSM.php">Status Keadaan Bencana</a></li>
+							<li class="menu-active"><a href="AdminLokasiLSM.php">Lokasi Bencana</a></li>
 						</ul>
 					</nav>
 				</div>
