@@ -121,6 +121,7 @@ include "includes/header-adminLSM.php";
 		</table>
 	</center>
 </div>
+</div>
 
 
 

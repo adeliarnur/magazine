@@ -93,12 +93,12 @@ include "includes/header-admin.php";
 		<form id="konten-baru" method="post" action="edit-status-button.php? id=<?php echo $id; ?>">
 			<div class="form-group">
 				<label for="inputJudul">Tanggal</label>
-				<input type="text" class="form-control" id="inputTanggal" name="tanggal" placeholder="<?php echo $view[3];?>">
+				<input type="date" class="form-control" id="inputTanggal" name="tanggal" placeholder="<?php echo $view[3];?>" value="<?php echo $view[3];?>">
 				</div>
 
 				<div class="form-group">
 					<label for="inputJudul">Lokasi</label>
-					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="<?php echo $view[2];?>">
+					<input type="text" class="form-control" id="inputLokasi" name="lokasi" placeholder="<?php echo $view[2];?>" value="<?php echo $view[2];?>" >
 					</div>
 
 				<div class="form-group">
@@ -126,7 +126,7 @@ include "includes/header-admin.php";
 
 				<div class="form-group">
 					<label for="inputJudul">Keterangan</label>
-					<input type="text" class="form-control" id="inputKeterangan" name="keterangan" placeholder="<?php echo $view[5];?>">
+					<input type="text" class="form-control" id="inputKeterangan" name="keterangan" placeholder="<?php echo $view[5];?>" value="<?php echo $view[5];?>">
 					</div>
 
 
