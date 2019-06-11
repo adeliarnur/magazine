@@ -107,6 +107,10 @@
 															    <th style="padding-right: 100px"><font color="red"><?php echo $row['nilai_status']; ?></font></th>
 												  			</tr>
 												  			<tr>
+															    <th style="padding-right: 10px">Status Orang.</th>
+															    <th style="padding-right: 100px"><font color="red"><?php echo $row['Status']; ?></font></th>
+												  			</tr>
+												  			<tr>
 															    <th style="padding-right: 10px">Ayah.</th>
 															    <th style="padding-right: 100px"><?php echo $row['NamaAyah']; ?></th>
 												  			</tr>
