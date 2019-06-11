@@ -89,13 +89,13 @@ if (count($_POST) > 0){
     		}
         $id_kategori = $stmt->insert_id;
         $filename = 'img/prabencana_thumbnail/' . $id_kategori . '.' . $ext;
-        $sql2 = 'UPDATE `pra-bencana_konten` SET `thumbnail` = ?';
+        $sql2 = 'UPDATE `pra-bencana_konten` SET `thumbnail` = ? WHERE id = ?';
         if (!rename($target, $filename)) {
           echo "Error: Gagal menset gambar !";
     			die();
         }
         $stmt = $db->prepare($sql2);
-        $stmt->bind_param("s", $filename);
+        $stmt->bind_param("si", $filename, $id_kategori);
         if ($stmt->execute() === FALSE) {
     			echo "Error: " . $sql . "<br>" . $db->error;
     			die();
