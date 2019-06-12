@@ -18,6 +18,11 @@ Frontend USER
 1. jalankan xampp, start apache
 1. buka browser, ketik localhost/magazine
 
+## Cara menjalankan database
+1. buka folder "Database"
+1. download file "psi.sql"
+1. lalu import di phpmyadmin dengan nama database "psi"
+
 ## Cara mengupdate proyek di github setelah melakukan perubahan di komputer pribadi
 1. buka windows explorer
 1. buka C:\xampp\htdocs
